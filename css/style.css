@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Delish</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="logo">
+
+                🍽 Daily Delish
+
+            </div>
+
+            <nav>
+
+                <a href="#" class="active">Home</a>
+                <a href="#">Recipes</a>
+                <a href="#">Categories</a>
+                <a href="#">About</a>
+
+            </nav>
+
+            <div class="menu">
+
+                <a href="login.html" class="login-btn">
+
+                    Login
+
+                </a>
+
+                <a href="register.html" class="register-btn">
+
+                    Register
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="container hero-container">
+
+            <div class="hero-left">
+
+                <span class="tag">
+
+                    🍃 Healthy Food Platform
+
+                </span>
+
+                <h1>
+
+                    Cook Better,
+                    <br>
+                    Eat Happier.
+
+                </h1>
+
+                <p>
+
+                    Temukan ribuan resep masakan rumahan,
+                    dessert, minuman, hingga makanan
+                    internasional yang dibuat oleh
+                    komunitas Daily Delish.
+
+                </p>
+
+                <div class="hero-button">
+
+                    <button class="primary">
+
+                        Explore Recipes
+
+                    </button>
+
+                    <button class="secondary">
+
+                        Share Recipe
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="hero-right">
+
+                <img src="assets/images/hero.png" alt="Hero">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= POPULAR ================= -->
+
+    <section class="popular">
+
+        <div class="container">
+
+            <div class="title">
+
+                <div>
+
+                    <small>Popular Recipe</small>
+
+                    <h2>
+
+                        Today's Recommendation
+
+                    </h2>
+
+                </div>
+
+                <a href="#">
+
+                    View All →
+
+                </a>
+
+            </div>
+
+            <div id="recipe-list" class="recipe-list">
+
+                <!-- JavaScript -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CATEGORY ================= -->
+
+    <section class="category">
+
+        <div class="container">
+
+            <div class="title-center">
+
+                <small>
+
+                    Explore
+
+                </small>
+
+                <h2>
+
+                    Browse Categories
+
+                </h2>
+
+            </div>
+
+            <div class="category-grid">
+
+                <div class="category-card">
+
+                    🥞
+
+                    <h3>Breakfast</h3>
+
+                </div>
+
+                <div class="category-card">
+
+                    🍝
+
+                    <h3>Lunch</h3>
+
+                </div>
+
+                <div class="category-card">
+
+                    🍜
+
+                    <h3>Dinner</h3>
+
+                </div>
+
+                <div class="category-card">
+
+                    🍰
+
+                    <h3>Dessert</h3>
+
+                </div>
+
+                <div class="category-card">
+
+                    🥗
+
+                    <h3>Healthy</h3>
+
+                </div>
+
+                <div class="category-card">
+
+                    ☕
+
+                    <h3>Drinks</h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= NEWSLETTER ================= -->
+
+    <section class="newsletter">
+
+        <div class="container newsletter-box">
+
+            <div>
+
+                <h2>
+
+                    Join Our Food Community
+
+                </h2>
+
+                <p>
+
+                    Dapatkan resep terbaru setiap minggu.
+
+                </p>
+
+            </div>
+
+            <form>
+
+                <input type="email" placeholder="Email Address">
+
+                <button>
+
+                    Subscribe
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer">
+
+            <div>
+
+                <h2>
+
+                    🍽 Daily Delish
+
+                </h2>
+
+                <p>
+
+                    Share your recipe with the world.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Menu
+
+                </h4>
+
+                <a href="#">Home</a>
+
+                <a href="#">Recipes</a>
+
+                <a href="#">About</a>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Account
+
+                </h4>
+
+                <a href="login.html">Login</a>
+
+                <a href="register.html">Register</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2025 Daily Delish
+
+        </div>
+
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
+
+/* ===================================
+   DAILY DELISH
+   Version : 1.0
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+    --primary:#355C4D;
+    --primary-dark:#28463A;
+    --secondary:#F7F3ED;
+    --white:#FFFFFF;
+    --black:#1E1E1E;
+    --gray:#777;
+    --light:#F9F9F9;
+    --orange:#F5A623;
+
+    --radius:22px;
+
+    --shadow:0 12px 35px rgba(0,0,0,.08);
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+    background:var(--secondary);
+    color:var(--black);
+
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-family:"Poppins",sans-serif;
+
+}
+
+.container{
+
+    width:90%;
+    max-width:1280px;
+    margin:auto;
+
+}
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+header{
+
+    position:fixed;
+    top:0;
+    width:100%;
+    background:white;
+    z-index:999;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+
+}
+
+.navbar{
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+nav a{
+
+    color:#444;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:var(--primary);
+
+}
+
+.active{
+
+    color:var(--primary);
+
+}
+
+.menu{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.login-btn{
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.register-btn{
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.register-btn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ===========================
+          HERO
+=========================== */
+
+.hero{
+
+    padding-top:150px;
+
+    padding-bottom:90px;
+
+}
+
+.hero-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.tag{
+
+    display:inline-block;
+
+    padding:12px 20px;
+
+    background:white;
+
+    border-radius:50px;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:25px;
+
+    color:var(--primary);
+
+}
+
+.hero-left h1{
+
+    font-size:70px;
+
+    line-height:80px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-left p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    font-size:17px;
+
+    margin-bottom:35px;
+
+}
+
+.hero-button{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.primary{
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.primary:hover{
+
+    background:var(--primary-dark);
+
+}
+
+.secondary{
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    border:2px solid var(--primary);
+
+    background:white;
+
+    color:var(--primary);
+
+}
+
+.secondary:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.hero-right img{
+
+    border-radius:35px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ===========================
+        TITLE
+=========================== */
+
+section{
+
+    padding:90px 0;
+
+}
+
+.title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    margin-bottom:40px;
+
+}
+
+.title small{
+
+    color:var(--primary);
+
+    font-size:15px;
+
+}
+
+.title h2{
+
+    font-size:40px;
+
+    margin-top:10px;
+
+}
+
+.title a{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.title-center{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.title-center small{
+
+    color:var(--primary);
+
+}
+
+.title-center h2{
+
+    margin-top:10px;
+
+    font-size:40px;
+
+}
