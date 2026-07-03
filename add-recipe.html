@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tambah Resep | Daily Delish</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            🍽 Daily Delish
+
+        </div>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+
+                🏠 Dashboard
+
+            </li>
+
+            <li class="active">
+
+                ➕ Add Recipe
+
+            </li>
+
+            <li>
+
+                👤 Profile
+
+            </li>
+
+            <li id="logout">
+
+                🚪 Logout
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <h1>Tambah Resep Baru</h1>
+
+        <div class="form-card">
+
+            <form id="recipeForm">
+
+                <div class="input-group">
+
+                    <label>Judul Resep</label>
+
+                    <input
+                    type="text"
+                    id="title"
+                    required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Kategori</label>
+
+                    <select id="category">
+
+                        <option>Breakfast</option>
+                        <option>Lunch</option>
+                        <option>Dinner</option>
+                        <option>Dessert</option>
+                        <option>Healthy</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Waktu Memasak</label>
+
+                    <input
+                    type="text"
+                    id="time"
+                    placeholder="30 Menit">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>URL Gambar</label>
+
+                    <input
+                    type="text"
+                    id="image">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Deskripsi</label>
+
+                    <textarea
+                    id="description"
+                    rows="5"></textarea>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Bahan-bahan</label>
+
+                    <textarea
+                    id="ingredients"
+                    rows="6"></textarea>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Langkah Memasak</label>
+
+                    <textarea
+                    id="steps"
+                    rows="8"></textarea>
+
+                </div>
+
+                <button class="primary">
+
+                    Simpan Resep
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/addRecipe.js"></script>
+
+</body>
+
+</html>
