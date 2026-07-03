@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Daily Delish</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            🍽 <span>Daily Delish</span>
+
+        </div>
+
+        <ul>
+
+            <li class="active">🏠 Dashboard</li>
+
+            <li>🍲 My Recipes</li>
+
+            <li>➕ Add Recipe</li>
+
+            <li>📂 Categories</li>
+
+            <li>👤 Profile</li>
+
+            <li id="logout">🚪 Logout</li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Content -->
+
+    <main class="content">
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>Welcome Back 👋</h1>
+
+                <p>Kelola semua resep makananmu di sini.</p>
+
+            </div>
+
+            <button class="primary">
+
+                + Add Recipe
+
+            </button>
+
+        </div>
+
+        <!-- Statistik -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <h3>12</h3>
+
+                <p>Total Recipes</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>8</h3>
+
+                <p>Published</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>4</h3>
+
+                <p>Draft</p>
+
+            </div>
+
+        </section>
+
+        <!-- Table -->
+
+        <section class="table-box">
+
+            <div class="table-header">
+
+                <h2>My Recipes</h2>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Image</th>
+                        <th>Recipe</th>
+                        <th>Category</th>
+                        <th>Time</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="recipeTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
