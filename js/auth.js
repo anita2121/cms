@@ -1,42 +1,62 @@
 // ===============================
-// DAILY DELISH AUTH
+// DAILY DELISH LOGIN
 // ===============================
 
 const form = document.getElementById("loginForm");
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
     const email = document.getElementById("email").value.trim();
-
     const password = document.getElementById("password").value;
 
-    // Ambil semua user yang sudah register
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    try {
 
-    // Cari user yang cocok
-    const user = users.find(u =>
-        u.email === email &&
-        u.password === password
-    );
+        const response = await fetch("https://cms-api-workerrr.widyazef28.workers.dev/login", {
 
-    if (!user) {
+            method: "POST",
 
-        alert("Email atau password salah!");
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-        return;
+            body: JSON.stringify({
+                email,
+                password
+            })
+
+        });
+
+        const result = await response.json();
+
+        if (!result.success) {
+
+            alert(result.message);
+
+            return;
+
+        }
+
+        // Simpan status login
+        localStorage.setItem("login", "true");
+
+        // Simpan data user
+        localStorage.setItem(
+            "currentUser",
+            JSON.stringify(result.user)
+        );
+
+        alert("Login berhasil!");
+
+        window.location.href = "dashboard.html";
+
+    } catch (err) {
+
+        alert("Tidak dapat terhubung ke server!");
+
+        console.error(err);
 
     }
-
-    // Simpan status login
-    localStorage.setItem("login", "true");
-
-    // Simpan user yang sedang login
-    localStorage.setItem("currentUser", JSON.stringify(user));
-
-    alert("Login berhasil!");
-
-    window.location.href = "dashboard.html";
 
 });
