@@ -4,10 +4,10 @@
 =================================== */
 
 // ==============================
-// DATA DUMMY
+// DEFAULT DATA
 // ==============================
 
-let recipes = [
+const defaultRecipes = [
 
 {
     id:1,
@@ -18,7 +18,9 @@ let recipes = [
     author:"Amanda",
     image:"https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=900",
     avatar:"https://i.pravatar.cc/150?img=15",
-    description:"Creamy pasta dengan ayam panggang dan saus spesial."
+    description:"Creamy pasta dengan ayam panggang dan saus spesial.",
+    ingredients:"-",
+    steps:"-"
 },
 
 {
@@ -30,7 +32,9 @@ let recipes = [
     author:"Michael",
     image:"https://images.unsplash.com/photo-1525351484163-7529414344d8?w=900",
     avatar:"https://i.pravatar.cc/150?img=10",
-    description:"Pancake lembut dengan topping strawberry."
+    description:"Pancake lembut dengan topping strawberry.",
+    ingredients:"-",
+    steps:"-"
 },
 
 {
@@ -42,7 +46,9 @@ let recipes = [
     author:"Sarah",
     image:"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900",
     avatar:"https://i.pravatar.cc/150?img=5",
-    description:"Salad sehat dengan sayuran segar."
+    description:"Salad sehat dengan sayuran segar.",
+    ingredients:"-",
+    steps:"-"
 },
 
 {
@@ -54,28 +60,34 @@ let recipes = [
     author:"Kevin",
     image:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900",
     avatar:"https://i.pravatar.cc/150?img=8",
-    description:"Chocolate cake lembut favorit keluarga."
+    description:"Chocolate cake lembut favorit keluarga.",
+    ingredients:"-",
+    steps:"-"
 }
 
 ];
 
 // ==============================
-// ELEMENT
+// LOAD DATA
 // ==============================
+
+const localRecipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+const recipes = [...defaultRecipes, ...localRecipes];
 
 const recipeContainer = document.getElementById("recipe-list");
 
 // ==============================
-// CARD
+// DISPLAY
 // ==============================
 
 function displayRecipes(data){
 
-    recipeContainer.innerHTML="";
+    recipeContainer.innerHTML = "";
 
     data.forEach(recipe=>{
 
-        recipeContainer.innerHTML+=`
+        recipeContainer.innerHTML += `
 
         <div class="recipe-card">
 
@@ -103,7 +115,11 @@ function displayRecipes(data){
 
                     <span>⏱ ${recipe.time}</span>
 
-                    <span class="rating">⭐ ${recipe.rating}</span>
+                    <span class="rating">
+
+                        ⭐ ${recipe.rating || "5.0"}
+
+                    </span>
 
                 </div>
 
@@ -111,11 +127,11 @@ function displayRecipes(data){
 
                     <div class="author-left">
 
-                        <img src="${recipe.avatar}">
+                        <img src="${recipe.avatar || "https://i.pravatar.cc/150"}">
 
                         <div>
 
-                            <h4>${recipe.author}</h4>
+                            <h4>${recipe.author || "Daily Delish User"}</h4>
 
                             <small>Recipe Creator</small>
 
@@ -123,7 +139,9 @@ function displayRecipes(data){
 
                     </div>
 
-                    <button class="primary">
+                    <button
+                        class="primary"
+                        onclick="viewRecipe(${recipe.id})">
 
                         View
 
@@ -144,6 +162,18 @@ function displayRecipes(data){
 displayRecipes(recipes);
 
 // ==============================
+// VIEW DETAIL
+// ==============================
+
+function viewRecipe(id){
+
+    localStorage.setItem("detailRecipeId", id);
+
+    window.location.href = "recipe-detail.html";
+
+}
+
+// ==============================
 // FAVORITE
 // ==============================
 
@@ -151,17 +181,10 @@ document.addEventListener("click",(e)=>{
 
     if(e.target.classList.contains("favorite")){
 
-        if(e.target.innerHTML=="🤍"){
-
-            e.target.innerHTML="❤️";
-
-        }
-
-        else{
-
-            e.target.innerHTML="🤍";
-
-        }
+        e.target.innerHTML =
+            e.target.innerHTML === "🤍"
+            ? "❤️"
+            : "🤍";
 
     }
 
@@ -173,35 +196,37 @@ document.addEventListener("click",(e)=>{
 
 function searchRecipe(keyword){
 
-    const result = recipes.filter(recipe=>
+    const result = recipes.filter(recipe=>{
 
-        recipe.title.toLowerCase().includes(keyword.toLowerCase())
+        return recipe.title
+            .toLowerCase()
+            .includes(keyword.toLowerCase());
 
-    );
+    });
 
     displayRecipes(result);
 
 }
 
 // ==============================
-// CATEGORY FILTER
+// CATEGORY
 // ==============================
 
-const categoryCards=document.querySelectorAll(".category-card");
+const categoryCards = document.querySelectorAll(".category-card");
 
 categoryCards.forEach(card=>{
 
     card.addEventListener("click",()=>{
 
-        const category=card.innerText.trim();
+        const category = card.querySelector("h3").innerText;
 
-        const filtered=recipes.filter(recipe=>
+        const result = recipes.filter(recipe=>{
 
-            recipe.category===category
+            return recipe.category === category;
 
-        );
+        });
 
-        displayRecipes(filtered);
+        displayRecipes(result);
 
     });
 
@@ -218,44 +243,27 @@ function showAll(){
 }
 
 // ==============================
-// API (Cloudflare D1 NANTI)
-// ==============================
-
-async function fetchRecipes(){
-
-// nanti diganti
-
-/*
-const response = await fetch("/api/recipes");
-
-const data = await response.json();
-
-displayRecipes(data);
-
-*/
-
-}
-
-// ==============================
-// SCROLL EFFECT
+// HEADER EFFECT
 // ==============================
 
 window.addEventListener("scroll",()=>{
 
-const header=document.querySelector("header");
+    const header=document.querySelector("header");
 
-if(window.scrollY>40){
+    if(window.scrollY>40){
 
-header.style.background="#fff";
+        header.style.background="#fff";
 
-header.style.boxShadow="0 8px 25px rgba(0,0,0,.08)";
+        header.style.boxShadow="0 8px 25px rgba(0,0,0,.08)";
 
-}
+    }
 
-else{
+    else{
 
-header.style.boxShadow="none";
+        header.style.background="#fff";
 
-}
+        header.style.boxShadow="none";
+
+    }
 
 });
