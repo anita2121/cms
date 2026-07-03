@@ -3,84 +3,105 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Register | Daily Delish</title>
+    <title>Register | Daily Delish</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body class="login-page">
 
-<div class="login-container">
+<div class="login-wrapper">
 
-<div class="login-card">
+    <!-- Gambar -->
 
-<h1>🍽 Daily Delish</h1>
+    <div class="login-image">
 
-<p>Buat akun baru</p>
+        <img src="assets/images/login-food.png" alt="Food">
 
-<form id="registerForm">
+    </div>
 
-<div class="input-group">
+    <!-- Register Card -->
 
-<label>Nama</label>
+    <div class="login-card">
 
-<input
-type="text"
-id="name"
-required>
+        <div class="login-logo">
 
-</div>
+            🍽
 
-<div class="input-group">
+            <h2>Daily Delish</h2>
 
-<label>Email</label>
+            <p>Buat akun baru</p>
 
-<input
-type="email"
-id="email"
-required>
+        </div>
 
-</div>
+        <form id="registerForm">
 
-<div class="input-group">
+            <div class="input-group">
 
-<label>Password</label>
+                <label>Nama Lengkap</label>
 
-<input
-type="password"
-id="password"
-required>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Masukkan nama lengkap"
+                    required>
 
-</div>
+            </div>
 
-<button class="primary">
+            <div class="input-group">
 
-Register
+                <label>Email</label>
 
-</button>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="example@email.com"
+                    required>
 
-</form>
+            </div>
 
-<p class="register-link">
+            <div class="input-group">
 
-Sudah punya akun?
+                <label>Password</label>
 
-<a href="login.html">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="********"
+                    required>
 
-Login
+            </div>
 
-</a>
+            <button
+                type="submit"
+                class="login-submit">
 
-</p>
+                Register
 
-</div>
+            </button>
+
+        </form>
+
+        <p class="register-link">
+
+            Sudah punya akun?
+
+            <a href="login.html">
+
+                Login
+
+            </a>
+
+        </p>
+
+    </div>
 
 </div>
 
