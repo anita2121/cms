@@ -1,39 +1,51 @@
+// ===============================
+// DAILY DELISH REGISTER
+// ===============================
+
 const form = document.getElementById("registerForm");
 
-form.addEventListener("submit",(e)=>{
+form.addEventListener("submit", function (e) {
 
-e.preventDefault();
+    e.preventDefault();
 
-const users = JSON.parse(localStorage.getItem("users")) || [];
+    const name = document.getElementById("name").value.trim();
 
-const user = {
+    const email = document.getElementById("email").value.trim();
 
-id:Date.now(),
+    const password = document.getElementById("password").value;
 
-name:name.value,
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-email:email.value,
+    // Cek email sudah terdaftar
+    const exist = users.find(user => user.email === email);
 
-password:password.value
+    if (exist) {
 
-};
+        alert("Email sudah digunakan!");
 
-const exist = users.find(u=>u.email===user.email);
+        return;
 
-if(exist){
+    }
 
-alert("Email sudah digunakan!");
+    // Buat user baru
+    const newUser = {
 
-return;
+        id: Date.now(),
 
-}
+        name: name,
 
-users.push(user);
+        email: email,
 
-localStorage.setItem("users",JSON.stringify(users));
+        password: password
 
-alert("Register berhasil.");
+    };
 
-location.href="login.html";
+    users.push(newUser);
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("Register berhasil!");
+
+    window.location.href = "login.html";
 
 });
