@@ -1797,3 +1797,57 @@ padding:30px;
 }
 
 }
+
+/* ==========================
+      FILTER BUTTON
+========================== */
+
+.filter-category{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:50px;
+
+}
+
+.filter-category button{
+
+    padding:12px 24px;
+
+    border:none;
+
+    background:white;
+
+    border-radius:50px;
+
+    box-shadow:var(--shadow);
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.filter-category button:hover{
+
+    background:#355C4D;
+
+    color:white;
+
+}
+
+.filter-category .active{
+
+    background:#355C4D;
+
+    color:white;
+
+}
