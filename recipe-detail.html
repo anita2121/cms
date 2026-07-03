@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recipe Detail | Daily Delish</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="container navbar">
+
+        <div class="logo">
+
+            🍽 Daily Delish
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="dashboard.html">Dashboard</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<section class="recipe-detail">
+
+<div class="container">
+
+    <div class="detail-image">
+
+        <img id="detailImage">
+
+    </div>
+
+    <div class="detail-content">
+
+        <span id="detailCategory" class="category-badge"></span>
+
+        <h1 id="detailTitle"></h1>
+
+        <div class="detail-info">
+
+            <span id="detailTime"></span>
+
+        </div>
+
+        <p id="detailDescription"></p>
+
+        <hr>
+
+        <h2>Bahan-bahan</h2>
+
+        <p id="detailIngredients"></p>
+
+        <hr>
+
+        <h2>Langkah Memasak</h2>
+
+        <p id="detailSteps"></p>
+
+        <button
+        class="primary"
+        onclick="history.back()">
+
+        ← Kembali
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+<script src="js/detailRecipe.js"></script>
+
+</body>
+
+</html>
