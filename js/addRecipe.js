@@ -1,57 +1,80 @@
+// ===============================
+// DAILY DELISH - ADD RECIPE
+// ===============================
+
 // Login Check
-
-if(localStorage.getItem("login")!="true"){
-
-location.href="login.html";
-
+if (localStorage.getItem("login") !== "true") {
+    location.href = "login.html";
 }
 
 // Logout
+document.getElementById("logout").addEventListener("click", () => {
+    localStorage.removeItem("login");
+    location.href = "login.html";
+});
 
-document.getElementById("logout").onclick=()=>{
+// Form
+const form = document.getElementById("recipeForm");
 
-localStorage.removeItem("login");
+// Upload Image
+let imageData = "";
 
-location.href="login.html";
+const imageInput = document.getElementById("image");
+const preview = document.getElementById("preview");
 
-};
+imageInput.addEventListener("change", function () {
 
-// Submit
+    const file = this.files[0];
 
-const form=document.getElementById("recipeForm");
+    if (!file) return;
 
-form.addEventListener("submit",(e)=>{
+    const reader = new FileReader();
 
-e.preventDefault();
+    reader.onload = function (e) {
 
-const recipe={
+        imageData = e.target.result;
 
-id:Date.now(),
+        preview.src = imageData;
 
-title:title.value,
+    };
 
-category:category.value,
+    reader.readAsDataURL(file);
 
-time:time.value,
+});
 
-image:image.value,
+// Submit Form
+form.addEventListener("submit", (e) => {
 
-description:description.value,
+    e.preventDefault();
 
-ingredients:ingredients.value,
+    const recipe = {
 
-steps:steps.value
+        id: Date.now(),
 
-};
+        title: document.getElementById("title").value,
 
-const recipes=JSON.parse(localStorage.getItem("recipes"))||[];
+        category: document.getElementById("category").value,
 
-recipes.push(recipe);
+        time: document.getElementById("time").value,
 
-localStorage.setItem("recipes",JSON.stringify(recipes));
+        image: imageData,
 
-alert("Resep berhasil ditambahkan!");
+        description: document.getElementById("description").value,
 
-location.href="dashboard.html";
+        ingredients: document.getElementById("ingredients").value,
+
+        steps: document.getElementById("steps").value
+
+    };
+
+    const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+
+    recipes.push(recipe);
+
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+
+    alert("Resep berhasil ditambahkan!");
+
+    location.href = "dashboard.html";
 
 });
