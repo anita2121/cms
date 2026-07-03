@@ -1,0 +1,227 @@
+/* =====================================
+   DAILY DELISH
+   navbar.css
+====================================== */
+
+/* NAVBAR */
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:#FAF7F2;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s ease;
+}
+
+.navbar{
+    width:90%;
+    max-width:1200px;
+    height:80px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* LOGO */
+.logo{
+    font-family:'Playfair Display', serif;
+    font-size:32px;
+    font-weight:700;
+    color:#355E3B;
+    cursor:pointer;
+}
+
+.logo span{
+    color:#C49A6C;
+}
+
+/* MENU */
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.nav-menu li{
+    list-style:none;
+}
+
+.nav-menu li a{
+    color:#2C2C2C;
+    font-size:16px;
+    font-weight:500;
+    text-decoration:none;
+    transition:.3s;
+    position:relative;
+}
+
+.nav-menu li a:hover{
+    color:#355E3B;
+}
+
+/* Underline Animation */
+.nav-menu li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#355E3B;
+    transition:.3s;
+}
+
+.nav-menu li a:hover::after{
+    width:100%;
+}
+
+/* RIGHT MENU */
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/* SEARCH */
+.search-btn{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#fff;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.search-btn:hover{
+    background:#355E3B;
+    color:#fff;
+}
+
+/* LOGIN */
+.login-btn{
+    padding:10px 22px;
+    border-radius:30px;
+    background:#355E3B;
+    color:#fff;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#C49A6C;
+}
+
+/* REGISTER */
+.register-btn{
+    padding:10px 22px;
+    border:2px solid #355E3B;
+    border-radius:30px;
+    color:#355E3B;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.register-btn:hover{
+    background:#355E3B;
+    color:#fff;
+}
+
+/* USER PROFILE */
+.profile{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+}
+
+.profile img{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.profile span{
+    font-weight:500;
+    color:#355E3B;
+}
+
+/* MOBILE MENU */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:#355E3B;
+}
+
+/* STICKY EFFECT */
+header.sticky{
+    background:#ffffff;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+
+    .nav-menu{
+        position:fixed;
+        top:80px;
+        left:-100%;
+        width:100%;
+        height:calc(100vh - 80px);
+        background:#FAF7F2;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+
+        padding-top:50px;
+        gap:30px;
+
+        transition:.4s;
+    }
+
+    .nav-menu.active{
+        left:0;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-right{
+        gap:10px;
+    }
+
+    .register-btn{
+        display:none;
+    }
+}
+
+@media(max-width:576px){
+
+    .logo{
+        font-size:26px;
+    }
+
+    .login-btn{
+        padding:8px 18px;
+        font-size:14px;
+    }
+
+    .search-btn{
+        width:38px;
+        height:38px;
+    }
+}
