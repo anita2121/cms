@@ -9,7 +9,7 @@ const recipes = [
     title:"Classic Pancake",
     category:"Breakfast",
     time:"20 Minutes",
-    image:"assets/images/pancake.jpg"
+    image:"assets/images/breakfast.jpg"
 },
 
 {
@@ -17,7 +17,7 @@ const recipes = [
     title:"Creamy Pasta",
     category:"Lunch",
     time:"30 Minutes",
-    image:"assets/images/pasta.jpg"
+    image:"assets/images/lunch.jpg"
 },
 
 {
@@ -25,7 +25,7 @@ const recipes = [
     title:"Chocolate Cake",
     category:"Dessert",
     time:"50 Minutes",
-    image:"assets/images/cake.jpg"
+    image:"assets/images/dessert.jpg"
 },
 
 {
@@ -33,7 +33,7 @@ const recipes = [
     title:"Fresh Salad",
     category:"Healthy",
     time:"15 Minutes",
-    image:"assets/images/salad.jpg"
+    image:"assets/images/healthy.jpg"
 },
 
 {
@@ -41,7 +41,7 @@ const recipes = [
     title:"Orange Juice",
     category:"Drinks",
     time:"10 Minutes",
-    image:"assets/images/drink.jpg"
+    image:"assets/images/drinks.jpg"
 },
 
 {
@@ -59,9 +59,11 @@ const recipes = [
 // ===============================
 
 const recipeList = document.getElementById("recipe-list");
+const searchInput = document.getElementById("searchRecipe");
+const filterButtons = document.querySelectorAll(".filter-category button");
 
 // ===============================
-// RENDER RECIPES
+// RENDER
 // ===============================
 
 function renderRecipes(data){
@@ -77,7 +79,6 @@ function renderRecipes(data){
         `;
 
         return;
-
     }
 
     data.forEach(recipe=>{
@@ -97,9 +98,7 @@ function renderRecipes(data){
                 <p><strong>Time:</strong> ${recipe.time}</p>
 
                 <a href="recipe-detail.html?id=${recipe.id}" class="primary">
-
                     View Recipe
-
                 </a>
 
             </div>
@@ -113,25 +112,83 @@ function renderRecipes(data){
 }
 
 // ===============================
-// FILTER FROM URL
+// FILTER DARI URL
 // ===============================
 
 const params = new URLSearchParams(window.location.search);
 
 const selectedCategory = params.get("category");
 
+let currentRecipes = recipes;
+
 if(selectedCategory){
 
-    const filteredRecipes = recipes.filter(recipe =>
-
-        recipe.category === selectedCategory
-
+    currentRecipes = recipes.filter(recipe =>
+        recipe.category.toLowerCase() === selectedCategory.toLowerCase()
     );
 
-    renderRecipes(filteredRecipes);
+}
 
-}else{
+renderRecipes(currentRecipes);
 
-    renderRecipes(recipes);
+// ===============================
+// SEARCH
+// ===============================
+
+if(searchInput){
+
+    searchInput.addEventListener("keyup",function(){
+
+        const keyword = this.value.toLowerCase();
+
+        const result = currentRecipes.filter(recipe=>
+
+            recipe.title.toLowerCase().includes(keyword)
+
+        );
+
+        renderRecipes(result);
+
+    });
 
 }
+
+// ===============================
+// BUTTON FILTER
+// ===============================
+
+filterButtons.forEach(button=>{
+
+    button.addEventListener("click",function(){
+
+        filterButtons.forEach(btn=>btn.classList.remove("active"));
+
+        this.classList.add("active");
+
+        const category = this.textContent.trim();
+
+        if(category==="All"){
+
+            currentRecipes = recipes;
+
+        }else{
+
+            currentRecipes = recipes.filter(recipe=>
+
+                recipe.category===category
+
+            );
+
+        }
+
+        if(searchInput){
+
+            searchInput.value="";
+
+        }
+
+        renderRecipes(currentRecipes);
+
+    });
+
+});
