@@ -1548,6 +1548,25 @@ nav{
     grid-template-columns:1fr;
 }
 
+    
+
+}
+
+.category-page{
+    padding:40px 0 80px;
+}
+
+.category-card{
+    cursor:pointer;
+}
+
+.category-card p{
+    margin-top:10px;
+    color:#777;
+}
+
+.category-card:hover{
+    transform:translateY(-8px);
 }
 
     
