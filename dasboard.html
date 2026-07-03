@@ -2,20 +2,24 @@
 <html lang="id">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Dashboard | Daily Delish</title>
 
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body class="dashboard-page">
 
 <div class="dashboard">
 
-    <!-- Sidebar -->
+    <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
 
@@ -27,25 +31,51 @@
 
         <ul>
 
-            <li class="active">🏠 Dashboard</li>
+            <li class="active">
 
-            <li>🍲 My Recipes</li>
+                🏠 Dashboard
 
-            <li>➕ Add Recipe</li>
+            </li>
 
-            <li>📂 Categories</li>
+            <li onclick="location.href='add-recipe.html'">
 
-            <li>👤 Profile</li>
+                ➕ Add Recipe
 
-            <li id="logout">🚪 Logout</li>
+            </li>
+
+            <li onclick="location.href='index.html'">
+
+                🍲 View Website
+
+            </li>
+
+            <li>
+
+                📂 Categories
+
+            </li>
+
+            <li>
+
+                👤 Profile
+
+            </li>
+
+            <li id="logout">
+
+                🚪 Logout
+
+            </li>
 
         </ul>
 
     </aside>
 
-    <!-- Content -->
+    <!-- ================= CONTENT ================= -->
 
     <main class="content">
+
+        <!-- TOPBAR -->
 
         <div class="topbar">
 
@@ -57,7 +87,9 @@
 
             </div>
 
-            <button class="primary">
+            <button
+                class="primary"
+                onclick="location.href='add-recipe.html'">
 
                 + Add Recipe
 
@@ -65,13 +97,24 @@
 
         </div>
 
-        <!-- Statistik -->
+        <!-- SEARCH -->
+
+        <div class="dashboard-search">
+
+            <input
+                type="text"
+                placeholder="Cari resep..."
+                onkeyup="searchRecipe(this.value)">
+
+        </div>
+
+        <!-- STATS -->
 
         <section class="stats">
 
             <div class="stat-card">
 
-                <h3>12</h3>
+                <h3>0</h3>
 
                 <p>Total Recipes</p>
 
@@ -79,7 +122,7 @@
 
             <div class="stat-card">
 
-                <h3>8</h3>
+                <h3>0</h3>
 
                 <p>Published</p>
 
@@ -87,7 +130,7 @@
 
             <div class="stat-card">
 
-                <h3>4</h3>
+                <h3>0</h3>
 
                 <p>Draft</p>
 
@@ -95,7 +138,7 @@
 
         </section>
 
-        <!-- Table -->
+        <!-- TABLE -->
 
         <section class="table-box">
 
@@ -112,9 +155,13 @@
                     <tr>
 
                         <th>Image</th>
+
                         <th>Recipe</th>
+
                         <th>Category</th>
+
                         <th>Time</th>
+
                         <th>Action</th>
 
                     </tr>
