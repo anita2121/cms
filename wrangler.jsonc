@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cms-api-worker",
+  "main": "src/index.js",
+  "compatibility_date": "2025-07-03",
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cms-api-db",
+      "database_id": "ISI_DATABASE_ID_KAMU"
+    }
+  ]
+}
