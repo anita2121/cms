@@ -1,22 +1,42 @@
+// ===============================
+// DAILY DELISH AUTH
+// ===============================
+
 const form = document.getElementById("loginForm");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", function (e) {
 
     e.preventDefault();
 
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email").value.trim();
+
     const password = document.getElementById("password").value;
 
-    if(email === "admin@dailydelish.com" && password === "123456"){
+    // Ambil semua user yang sudah register
+    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-        localStorage.setItem("login","true");
+    // Cari user yang cocok
+    const user = users.find(u =>
+        u.email === email &&
+        u.password === password
+    );
 
-        window.location.href = "dashboard.html";
+    if (!user) {
 
-    }else{
+        alert("Email atau password salah!");
 
-        alert("Email atau password salah.");
+        return;
 
     }
+
+    // Simpan status login
+    localStorage.setItem("login", "true");
+
+    // Simpan user yang sedang login
+    localStorage.setItem("currentUser", JSON.stringify(user));
+
+    alert("Login berhasil!");
+
+    window.location.href = "dashboard.html";
 
 });
