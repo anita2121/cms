@@ -1215,4 +1215,31 @@ outline:none;
 
 border-color:#355C4D;
 
+
+}
+
+/* ======================
+      IMAGE PREVIEW
+====================== */
+
+.image-preview{
+
+    margin-top:20px;
+
+}
+
+.image-preview img{
+
+    width:100%;
+
+    max-width:350px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:2px dashed #ccc;
+
 }
