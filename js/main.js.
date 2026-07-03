@@ -1,0 +1,261 @@
+/* ===================================
+   DAILY DELISH
+   main.js
+=================================== */
+
+// ==============================
+// DATA DUMMY
+// ==============================
+
+let recipes = [
+
+{
+    id:1,
+    title:"Creamy Chicken Pasta",
+    category:"Dinner",
+    time:"30 Min",
+    rating:"4.9",
+    author:"Amanda",
+    image:"https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=900",
+    avatar:"https://i.pravatar.cc/150?img=15",
+    description:"Creamy pasta dengan ayam panggang dan saus spesial."
+},
+
+{
+    id:2,
+    title:"Berry Pancake",
+    category:"Breakfast",
+    time:"20 Min",
+    rating:"4.8",
+    author:"Michael",
+    image:"https://images.unsplash.com/photo-1525351484163-7529414344d8?w=900",
+    avatar:"https://i.pravatar.cc/150?img=10",
+    description:"Pancake lembut dengan topping strawberry."
+},
+
+{
+    id:3,
+    title:"Healthy Salad",
+    category:"Healthy",
+    time:"15 Min",
+    rating:"5.0",
+    author:"Sarah",
+    image:"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900",
+    avatar:"https://i.pravatar.cc/150?img=5",
+    description:"Salad sehat dengan sayuran segar."
+},
+
+{
+    id:4,
+    title:"Chocolate Cake",
+    category:"Dessert",
+    time:"50 Min",
+    rating:"4.7",
+    author:"Kevin",
+    image:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900",
+    avatar:"https://i.pravatar.cc/150?img=8",
+    description:"Chocolate cake lembut favorit keluarga."
+}
+
+];
+
+// ==============================
+// ELEMENT
+// ==============================
+
+const recipeContainer = document.getElementById("recipe-list");
+
+// ==============================
+// CARD
+// ==============================
+
+function displayRecipes(data){
+
+    recipeContainer.innerHTML="";
+
+    data.forEach(recipe=>{
+
+        recipeContainer.innerHTML+=`
+
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+
+                <img src="${recipe.image}" alt="${recipe.title}">
+
+                <div class="favorite">🤍</div>
+
+                <div class="category-badge">
+
+                    ${recipe.category}
+
+                </div>
+
+            </div>
+
+            <div class="recipe-content">
+
+                <h3>${recipe.title}</h3>
+
+                <p>${recipe.description}</p>
+
+                <div class="recipe-info">
+
+                    <span>⏱ ${recipe.time}</span>
+
+                    <span class="rating">⭐ ${recipe.rating}</span>
+
+                </div>
+
+                <div class="author">
+
+                    <div class="author-left">
+
+                        <img src="${recipe.avatar}">
+
+                        <div>
+
+                            <h4>${recipe.author}</h4>
+
+                            <small>Recipe Creator</small>
+
+                        </div>
+
+                    </div>
+
+                    <button class="primary">
+
+                        View
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+displayRecipes(recipes);
+
+// ==============================
+// FAVORITE
+// ==============================
+
+document.addEventListener("click",(e)=>{
+
+    if(e.target.classList.contains("favorite")){
+
+        if(e.target.innerHTML=="🤍"){
+
+            e.target.innerHTML="❤️";
+
+        }
+
+        else{
+
+            e.target.innerHTML="🤍";
+
+        }
+
+    }
+
+});
+
+// ==============================
+// SEARCH
+// ==============================
+
+function searchRecipe(keyword){
+
+    const result = recipes.filter(recipe=>
+
+        recipe.title.toLowerCase().includes(keyword.toLowerCase())
+
+    );
+
+    displayRecipes(result);
+
+}
+
+// ==============================
+// CATEGORY FILTER
+// ==============================
+
+const categoryCards=document.querySelectorAll(".category-card");
+
+categoryCards.forEach(card=>{
+
+    card.addEventListener("click",()=>{
+
+        const category=card.innerText.trim();
+
+        const filtered=recipes.filter(recipe=>
+
+            recipe.category===category
+
+        );
+
+        displayRecipes(filtered);
+
+    });
+
+});
+
+// ==============================
+// SHOW ALL
+// ==============================
+
+function showAll(){
+
+    displayRecipes(recipes);
+
+}
+
+// ==============================
+// API (Cloudflare D1 NANTI)
+// ==============================
+
+async function fetchRecipes(){
+
+// nanti diganti
+
+/*
+const response = await fetch("/api/recipes");
+
+const data = await response.json();
+
+displayRecipes(data);
+
+*/
+
+}
+
+// ==============================
+// SCROLL EFFECT
+// ==============================
+
+window.addEventListener("scroll",()=>{
+
+const header=document.querySelector("header");
+
+if(window.scrollY>40){
+
+header.style.background="#fff";
+
+header.style.boxShadow="0 8px 25px rgba(0,0,0,.08)";
+
+}
+
+else{
+
+header.style.boxShadow="none";
+
+}
+
+});
