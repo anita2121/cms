@@ -4,48 +4,48 @@
 
 const form = document.getElementById("registerForm");
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
-
     const email = document.getElementById("email").value.trim();
-
     const password = document.getElementById("password").value;
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    try {
 
-    // Cek email sudah terdaftar
-    const exist = users.find(user => user.email === email);
+        const response = await fetch("https://cms-api-worker.widyazef28.workers.dev/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name,
+                email,
+                password
+            })
+        });
 
-    if (exist) {
+        const result = await response.json();
 
-        alert("Email sudah digunakan!");
+        if (result.success) {
 
-        return;
+            alert("Register berhasil!");
+
+            window.location.href = "login.html";
+
+        } else {
+
+            alert(result.message);
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Gagal terhubung ke server.");
 
     }
-
-    // Buat user baru
-    const newUser = {
-
-        id: Date.now(),
-
-        name: name,
-
-        email: email,
-
-        password: password
-
-    };
-
-    users.push(newUser);
-
-    localStorage.setItem("users", JSON.stringify(users));
-
-    alert("Register berhasil!");
-
-    window.location.href = "login.html";
 
 });
