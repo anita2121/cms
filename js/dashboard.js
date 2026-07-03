@@ -2,29 +2,43 @@
 // DAILY DELISH DASHBOARD
 // ===============================
 
-// Cek Login
+// ===============================
+// LOGIN CHECK
+// ===============================
+
 if (localStorage.getItem("login") !== "true") {
-    window.location.href = "login.html";
+    location.href = "login.html";
 }
 
-// Logout
+// ===============================
+// LOGOUT
+// ===============================
+
 document.getElementById("logout").addEventListener("click", () => {
+
     localStorage.removeItem("login");
-    window.location.href = "login.html";
+
+    location.href = "login.html";
+
 });
 
-// Ambil data resep
+// ===============================
+// DATA
+// ===============================
+
 let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
 
-// Element
 const table = document.getElementById("recipeTable");
 
-// Render Table
-function renderTable() {
+// ===============================
+// RENDER TABLE
+// ===============================
+
+function renderTable(data = recipes) {
 
     table.innerHTML = "";
 
-    if (recipes.length === 0) {
+    if (data.length === 0) {
 
         table.innerHTML = `
         <tr>
@@ -35,40 +49,71 @@ function renderTable() {
         `;
 
         return;
+
     }
 
-    recipes.forEach((recipe, index) => {
+    data.forEach(recipe => {
 
         table.innerHTML += `
+
         <tr>
 
             <td>
-                <img src="${recipe.image}" alt="">
+
+                <img
+                    src="${recipe.image || 'assets/images/no-image.png'}"
+                    alt="${recipe.title}">
+
             </td>
 
-            <td>${recipe.title}</td>
+            <td>
 
-            <td>${recipe.category}</td>
+                <strong>${recipe.title}</strong>
 
-            <td>${recipe.time}</td>
+            </td>
+
+            <td>
+
+                ${recipe.category}
+
+            </td>
+
+            <td>
+
+                ${recipe.time}
+
+            </td>
 
             <td>
 
                 <button
+                    class="primary"
+                    onclick="viewRecipe(${recipe.id})">
+
+                    View
+
+                </button>
+
+                <button
                     class="edit"
                     onclick="editRecipe(${recipe.id})">
+
                     Edit
+
                 </button>
 
                 <button
                     class="delete"
                     onclick="deleteRecipe(${recipe.id})">
+
                     Delete
+
                 </button>
 
             </td>
 
         </tr>
+
         `;
 
     });
@@ -78,12 +123,36 @@ function renderTable() {
 renderTable();
 
 // ===============================
+// VIEW
+// ===============================
+
+function viewRecipe(id){
+
+    localStorage.setItem("detailRecipeId", id);
+
+    location.href = "recipe-detail.html";
+
+}
+
+// ===============================
+// EDIT
+// ===============================
+
+function editRecipe(id){
+
+    localStorage.setItem("editRecipeId", id);
+
+    location.href = "edit-recipe.html";
+
+}
+
+// ===============================
 // DELETE
 // ===============================
 
 function deleteRecipe(id){
 
-    if(!confirm("Hapus resep ini?")) return;
+    if(!confirm("Yakin ingin menghapus resep ini?")) return;
 
     recipes = recipes.filter(recipe => recipe.id !== id);
 
@@ -96,30 +165,38 @@ function deleteRecipe(id){
 }
 
 // ===============================
-// EDIT
+// SEARCH
 // ===============================
 
-function editRecipe(id){
+function searchRecipe(keyword){
 
-    localStorage.setItem("editRecipeId", id);
+    const result = recipes.filter(recipe =>
 
-    window.location.href = "edit-recipe.html";
+        recipe.title.toLowerCase().includes(keyword.toLowerCase())
+
+    );
+
+    renderTable(result);
 
 }
 
 // ===============================
-// STATISTIK
+// STATS
 // ===============================
 
 function updateStats(){
 
     const cards = document.querySelectorAll(".stat-card h3");
 
-    cards[0].innerText = recipes.length;
+    if(cards.length >= 3){
 
-    cards[1].innerText = recipes.length;
+        cards[0].textContent = recipes.length;
 
-    cards[2].innerText = 0;
+        cards[1].textContent = recipes.length;
+
+        cards[2].textContent = 0;
+
+    }
 
 }
 
