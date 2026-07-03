@@ -1,10 +1,6 @@
-// ===============================
-// DAILY DELISH REGISTER
-// ===============================
-
 const form = document.getElementById("registerForm");
 
-form.addEventListener("submit", async function (e) {
+form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
@@ -14,7 +10,7 @@ form.addEventListener("submit", async function (e) {
 
     try {
 
-        const response = await fetch("https://cms-api-worker.widyazef28.workers.dev/register", {
+        const response = await fetch("https://cms-api-workerr.widyazef28.workers.dev/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -31,7 +27,6 @@ form.addEventListener("submit", async function (e) {
         if (result.success) {
 
             alert("Register berhasil!");
-
             window.location.href = "login.html";
 
         } else {
@@ -43,7 +38,6 @@ form.addEventListener("submit", async function (e) {
     } catch (error) {
 
         console.error(error);
-
         alert("Gagal terhubung ke server.");
 
     }
