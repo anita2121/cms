@@ -3,143 +3,219 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Recipes | Daily Delish</title>
+    <title>Recipes | Daily Delish</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<header>
+    <!-- ================= NAVBAR ================= -->
 
-<div class="container navbar">
+    <header>
 
-<div class="logo">
-🍽 Daily Delish
-</div>
+        <div class="container navbar">
 
-<nav>
+            <div class="logo">
 
-<a href="index.html">Home</a>
-<a href="recipes.html" class="active">Recipes</a>
-<a href="categories.html">Categories</a>
-<a href="about.html">About</a>
+                🍽 Daily Delish
 
-</nav>
+            </div>
 
-<div class="menu">
+            <nav>
 
-<a href="login.html" class="login-btn">Login</a>
+                <a href="index.html">Home</a>
 
-<a href="register.html" class="register-btn">Register</a>
+                <a href="recipes.html" class="active">Recipes</a>
 
-</div>
+                <a href="categories.html">Categories</a>
 
-</div>
+                <a href="about.html">About</a>
 
-</header>
+            </nav>
 
-<section class="recipe-page">
+            <div class="menu">
 
-<div class="container">
+                <a href="login.html" class="login-btn">
 
-<div class="title-center">
+                    Login
 
-<small>Discover</small>
+                </a>
 
-<h2>All Recipes</h2>
+                <a href="register.html" class="register-btn">
 
-<p>Temukan resep terbaik dari komunitas Daily Delish.</p>
+                    Register
 
-</div>
+                </a>
 
-<div class="recipe-search">
+            </div>
 
-<input
-type="text"
-id="searchRecipe"
-placeholder="Cari resep...">
+        </div>
 
-</div>
+    </header>
 
-<div class="filter-category">
+    <!-- ================= HERO ================= -->
 
-<button class="active">All</button>
+    <section class="catalog-hero">
 
-<button>Breakfast</button>
+        <div class="container">
 
-<button>Lunch</button>
+            <span class="tag">
 
-<button>Dinner</button>
+                🍴 Explore Recipes
 
-<button>Dessert</button>
+            </span>
 
-<button>Healthy</button>
+            <h1>
 
-<button>Drinks</button>
+                Discover Delicious Recipes
 
-</div>
+            </h1>
 
-<div class="recipe-list" id="recipe-list">
+            <p>
 
-</div>
+                Temukan berbagai resep masakan dari sarapan,
+                makan siang, makan malam hingga dessert favoritmu.
 
-</div>
+            </p>
 
-</section>
+        </div>
 
-<footer>
+    </section>
 
-<div class="container footer">
+    <!-- ================= SEARCH ================= -->
 
-<div>
+    <section class="catalog-search">
 
-<h2>🍽 Daily Delish</h2>
+        <div class="search-box">
 
-<p>Share your recipe with the world.</p>
+            <input
+                type="text"
+                id="searchRecipe"
+                placeholder="🔍 Search your favorite recipe...">
 
-</div>
+            <button>
 
-<div>
+                Search
 
-<h4>Menu</h4>
+            </button>
 
-<a href="index.html">Home</a>
+        </div>
 
-<a href="recipes.html">Recipes</a>
+    </section>
 
-<a href="about.html">About</a>
+    <!-- ================= FILTER ================= -->
 
-</div>
+    <section class="container">
 
-<div>
+        <div class="filter-category">
 
-<h4>Account</h4>
+            <button class="active">All</button>
 
-<a href="login.html">Login</a>
+            <button>🥞 Breakfast</button>
 
-<a href="register.html">Register</a>
+            <button>🍝 Lunch</button>
 
-</div>
+            <button>🍜 Dinner</button>
 
-</div>
+            <button>🍰 Dessert</button>
 
-<div class="copyright">
+            <button>🥗 Healthy</button>
 
-© 2025 Daily Delish
+            <button>☕ Drinks</button>
 
-</div>
+        </div>
 
-</footer>
+    </section>
 
-<script src="js/recipes.js"></script>
+    <!-- ================= RECIPE LIST ================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div
+                class="recipe-list"
+                id="recipe-list">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer">
+
+            <div>
+
+                <h2>
+
+                    🍽 Daily Delish
+
+                </h2>
+
+                <p>
+
+                    Share your recipe with the world.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Menu
+
+                </h4>
+
+                <a href="index.html">Home</a>
+
+                <a href="recipes.html">Recipes</a>
+
+                <a href="categories.html">Categories</a>
+
+                <a href="about.html">About</a>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Account
+
+                </h4>
+
+                <a href="login.html">Login</a>
+
+                <a href="register.html">Register</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2025 Daily Delish
+
+        </div>
+
+    </footer>
+
+    <script src="js/recipes.js"></script>
 
 </body>
 
