@@ -1,262 +1,341 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Delish | Temukan Resep Favoritmu</title>
+    <title>Daily Delish</title>
 
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <script defer src="js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
+    <!-- ================= NAVBAR ================= -->
 
-<header>
+    <header>
 
-    <div class="container nav">
+        <div class="container navbar">
 
-        <a href="#" class="logo">
-            🍽️ Daily <span>Delish</span>
-        </a>
+            <div class="logo">
 
-        <nav>
+                🍽️ Daily Delish
 
-            <a href="#">Home</a>
-            <a href="#">Recipes</a>
-            <a href="#">Categories</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            </div>
 
-        </nav>
+            <nav>
 
-        <div class="nav-btn">
+                <a href="#" class="active">Home</a>
+                <a href="#">Recipes</a>
+                <a href="#">Categories</a>
+                <a href="#">About</a>
 
-            <a href="login.html" class="btn-outline">
-                Login
-            </a>
+            </nav>
 
-            <a href="register.html" class="btn-primary">
-                Register
-            </a>
+            <div class="menu">
+
+                <a href="login.html" class="login-btn">
+
+                    Login
+
+                </a>
+
+                <a href="register.html" class="register-btn">
+
+                    Register
+
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
+    </header>
 
-</header>
+    <!-- ================= HERO ================= -->
 
-<!-- ================= HERO ================= -->
+    <section class="hero">
 
-<section class="hero">
+        <div class="container hero-container">
 
-<div class="container hero-grid">
+            <div class="hero-left">
 
-<div class="hero-text">
+                <span class="tag">
 
-<p class="badge">
-🍳 Welcome to Daily Delish
-</p>
+                    🍃 Healthy Food Platform
 
-<h1>
-Cook Better,
-Eat Happier.
-</h1>
+                </span>
 
-<p class="desc">
+                <h1>
 
-Temukan ribuan resep makanan Indonesia
-dan Internasional yang mudah dibuat,
-lengkap dengan langkah memasak dan tips.
+                    Cook Better,
+                    <br>
+                    Eat Happier.
 
-</p>
+                </h1>
 
-<div class="hero-button">
+                <p>
 
-<a href="#" class="btn-primary">
-Explore Recipes
-</a>
+                    Temukan ribuan resep masakan rumahan,
+                    dessert, minuman, hingga makanan
+                    internasional yang dibuat oleh
+                    komunitas Daily Delish.
 
-<a href="register.html" class="btn-outline">
-Share Your Recipe
-</a>
+                </p>
 
-</div>
+                <div class="hero-button">
 
-</div>
+                    <button class="primary">
 
-<div class="hero-image">
+                        Explore Recipes
 
-<img src="assets/images/hero.png" alt="Hero">
+                    </button>
 
-</div>
+                    <button class="secondary">
 
-</div>
+                        Share Recipe
 
-</section>
+                    </button>
 
-<!-- ================= CATEGORIES ================= -->
+                </div>
 
-<section class="categories">
+            </div>
 
-<div class="container">
+            <div class="hero-right">
 
-<h2>Kategori</h2>
+                <img src="assets/images/hero.png" alt="Hero">
 
-<div class="category-grid">
+            </div>
 
-<div class="category-card">
-🥞
-<h3>Breakfast</h3>
-</div>
+        </div>
 
-<div class="category-card">
-🍝
-<h3>Lunch</h3>
-</div>
+    </section>
 
-<div class="category-card">
-🍛
-<h3>Dinner</h3>
-</div>
+    <!-- ================= POPULAR ================= -->
 
-<div class="category-card">
-🍰
-<h3>Dessert</h3>
-</div>
+    <section class="popular">
 
-<div class="category-card">
-🥗
-<h3>Healthy</h3>
-</div>
+        <div class="container">
 
-<div class="category-card">
-☕
-<h3>Drinks</h3>
-</div>
+            <div class="title">
 
-</div>
+                <div>
 
-</div>
+                    <small>Popular Recipe</small>
 
-</section>
+                    <h2>
 
-<!-- ================= POPULAR RECIPES ================= -->
+                        Today's Recommendation
 
-<section class="recipes">
+                    </h2>
 
-<div class="container">
+                </div>
 
-<div class="section-title">
+                <a href="#">
 
-<h2>Popular Recipes</h2>
+                    View All →
 
-<a href="#">
-View All →
-</a>
+                </a>
 
-</div>
+            </div>
 
-<div id="recipe-list" class="recipe-grid">
+            <div id="recipe-list" class="recipe-list">
 
-<!-- nanti diisi JS -->
+                <!-- JavaScript -->
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<!-- ================= CTA ================= -->
+    <!-- ================= CATEGORY ================= -->
 
-<section class="cta">
+    <section class="category">
 
-<div class="container cta-box">
+        <div class="container">
 
-<div>
+            <div class="title-center">
 
-<h2>
-Punya Resep Favorit?
-</h2>
+                <small>
 
-<p>
+                    Explore
 
-Bagikan resepmu ke seluruh dunia
-setelah login ke Daily Delish.
+                </small>
 
-</p>
+                <h2>
 
-</div>
+                    Browse Categories
 
-<a href="register.html" class="btn-primary">
+                </h2>
 
-Mulai Sekarang
+            </div>
 
-</a>
+            <div class="category-grid">
 
-</div>
+                <div class="category-card">
 
-</section>
+                    🥞
 
-<!-- ================= FOOTER ================= -->
+                    <h3>Breakfast</h3>
 
-<footer>
+                </div>
 
-<div class="container footer">
+                <div class="category-card">
 
-<div>
+                    🍝
 
-<h3>🍽️ Daily Delish</h3>
+                    <h3>Lunch</h3>
 
-<p>
+                </div>
 
-Cook • Share • Inspire
+                <div class="category-card">
 
-</p>
+                    🍜
 
-</div>
+                    <h3>Dinner</h3>
 
-<div>
+                </div>
 
-<h4>Quick Links</h4>
+                <div class="category-card">
 
-<ul>
+                    🍰
 
-<li><a href="#">Home</a></li>
-<li><a href="#">Recipes</a></li>
-<li><a href="#">Categories</a></li>
-<li><a href="#">About</a></li>
+                    <h3>Dessert</h3>
 
-</ul>
+                </div>
 
-</div>
+                <div class="category-card">
 
-<div>
+                    🥗
 
-<h4>Account</h4>
+                    <h3>Healthy</h3>
 
-<ul>
+                </div>
 
-<li><a href="login.html">Login</a></li>
-<li><a href="register.html">Register</a></li>
+                <div class="category-card">
 
-</ul>
+                    ☕
 
-</div>
+                    <h3>Drinks</h3>
 
-</div>
+                </div>
 
-<div class="copyright">
+            </div>
 
-© 2025 Daily Delish. All Rights Reserved.
+        </div>
 
-</div>
+    </section>
 
-</footer>
+    <!-- ================= NEWSLETTER ================= -->
+
+    <section class="newsletter">
+
+        <div class="container newsletter-box">
+
+            <div>
+
+                <h2>
+
+                    Join Our Food Community
+
+                </h2>
+
+                <p>
+
+                    Dapatkan resep terbaru setiap minggu.
+
+                </p>
+
+            </div>
+
+            <form>
+
+                <input type="email" placeholder="Email Address">
+
+                <button>
+
+                    Subscribe
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer">
+
+            <div>
+
+                <h2>
+
+                    🍽️ Daily Delish
+
+                </h2>
+
+                <p>
+
+                    Share your recipe with the world.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Menu
+
+                </h4>
+
+                <a href="#">Home</a>
+
+                <a href="#">Recipes</a>
+
+                <a href="#">About</a>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Account
+
+                </h4>
+
+                <a href="login.html">Login</a>
+
+                <a href="register.html">Register</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2025 Daily Delish
+
+        </div>
+
+    </footer>
+
+    <script src="js/main.js"></script>
 
 </body>
+
 </html>
