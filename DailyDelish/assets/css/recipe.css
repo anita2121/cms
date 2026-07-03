@@ -1,0 +1,125 @@
+/* =====================================
+   DAILY DELISH
+   recipe.css
+====================================== */
+
+.recipe-banner{
+    padding:140px 10% 60px;
+    background:#FAF7F2;
+    text-align:center;
+}
+
+.recipe-banner h1{
+    font-family:'Playfair Display',serif;
+    color:#355E3B;
+    font-size:50px;
+}
+
+.recipe-container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:60px 0;
+}
+
+.recipe-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.recipe-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.recipe-card:hover{
+    transform:translateY(-8px);
+}
+
+.recipe-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.recipe-content{
+    padding:20px;
+}
+
+.recipe-content h3{
+    color:#355E3B;
+    margin-bottom:12px;
+}
+
+.recipe-content p{
+    color:#666;
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.recipe-info{
+    display:flex;
+    justify-content:space-between;
+    color:#888;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.recipe-btn{
+    display:inline-block;
+    padding:10px 22px;
+    background:#355E3B;
+    color:#fff;
+    border-radius:30px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.recipe-btn:hover{
+    background:#C49A6C;
+}
+
+.recipe-detail{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:start;
+}
+
+.recipe-detail img{
+    width:100%;
+    border-radius:20px;
+}
+
+.recipe-text h2{
+    font-family:'Playfair Display',serif;
+    color:#355E3B;
+    margin-bottom:20px;
+}
+
+.recipe-text h3{
+    margin:25px 0 15px;
+    color:#355E3B;
+}
+
+.recipe-text ul,
+.recipe-text ol{
+    margin-left:20px;
+    line-height:2;
+}
+
+@media(max-width:768px){
+
+.recipe-detail{
+    grid-template-columns:1fr;
+}
+
+.recipe-banner h1{
+    font-size:36px;
+}
+
+}
