@@ -1,77 +1,90 @@
+// ===============================
+// DAILY DELISH - CATEGORIES
+// ===============================
+
 const categories = [
+
 {
-icon:"🥞",
-name:"Breakfast",
-total:120
+    icon:"🥞",
+    name:"Breakfast",
+    total:120
 },
+
 {
-icon:"🍝",
-name:"Lunch",
-total:95
+    icon:"🍝",
+    name:"Lunch",
+    total:95
 },
+
 {
-icon:"🍜",
-name:"Dinner",
-total:110
+    icon:"🍜",
+    name:"Dinner",
+    total:110
 },
+
 {
-icon:"🍰",
-name:"Dessert",
-total:80
+    icon:"🍰",
+    name:"Dessert",
+    total:80
 },
+
 {
-icon:"🥗",
-name:"Healthy",
-total:65
+    icon:"🥗",
+    name:"Healthy",
+    total:65
 },
+
 {
-icon:"☕",
-name:"Drinks",
-total:50
+    icon:"☕",
+    name:"Drinks",
+    total:50
 }
+
 ];
 
-const list=document.getElementById("categoryList");
+const list = document.getElementById("categoryList");
 
-function render(data){
+function render(){
 
-list.innerHTML="";
+    list.innerHTML = "";
 
-data.forEach(category=>{
+    categories.forEach(category=>{
 
-list.innerHTML+=`
+        list.innerHTML += `
 
-<div class="category-card"
-onclick="location.href='recipes.html?category=${category.name}'">
+        <div class="category-card"
+        onclick="goCategory('${category.name}')">
 
-<div style="font-size:60px">${category.icon}</div>
+            <div style="font-size:60px">
 
-<h3>${category.name}</h3>
+                ${category.icon}
 
-<p>${category.total} Recipes</p>
+            </div>
 
-</div>
+            <h3>
 
-`;
+                ${category.name}
 
-});
+            </h3>
+
+            <p>
+
+                ${category.total} Recipes
+
+            </p>
+
+        </div>
+
+        `;
+
+    });
 
 }
 
-render(categories);
+function goCategory(category){
 
-document
-.getElementById("searchCategory")
-.addEventListener("keyup",function(){
+    window.location.href = `recipes.html?category=${encodeURIComponent(category)}`;
 
-const keyword=this.value.toLowerCase();
+}
 
-const result=categories.filter(category=>
-
-category.name.toLowerCase().includes(keyword)
-
-);
-
-render(result);
-
-});
+render();
