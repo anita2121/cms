@@ -1,351 +1,12 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Delish</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-    <!-- ================= NAVBAR ================= -->
-
-    <header>
-
-        <div class="container navbar">
-
-            <div class="logo">
-
-                🍽 Daily Delish
-
-            </div>
-
-            <nav>
-
-                <a href="#" class="active">Home</a>
-                <a href="#">Recipes</a>
-                <a href="#">Categories</a>
-                <a href="#">About</a>
-
-            </nav>
-
-            <div class="menu">
-
-                <a href="login.html" class="login-btn">
-
-                    Login
-
-                </a>
-
-                <a href="register.html" class="register-btn">
-
-                    Register
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </header>
-
-    <!-- ================= HERO ================= -->
-
-    <section class="hero">
-
-        <div class="container hero-container">
-
-            <div class="hero-left">
-
-                <span class="tag">
-
-                    🍃 Healthy Food Platform
-
-                </span>
-
-                <h1>
-
-                    Cook Better,
-                    <br>
-                    Eat Happier.
-
-                </h1>
-
-                <p>
-
-                    Temukan ribuan resep masakan rumahan,
-                    dessert, minuman, hingga makanan
-                    internasional yang dibuat oleh
-                    komunitas Daily Delish.
-
-                </p>
-
-                <div class="hero-button">
-
-                    <button class="primary">
-
-                        Explore Recipes
-
-                    </button>
-
-                    <button class="secondary">
-
-                        Share Recipe
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="hero-right">
-
-                <img src="assets/images/hero.png" alt="Hero">
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= POPULAR ================= -->
-
-    <section class="popular">
-
-        <div class="container">
-
-            <div class="title">
-
-                <div>
-
-                    <small>Popular Recipe</small>
-
-                    <h2>
-
-                        Today's Recommendation
-
-                    </h2>
-
-                </div>
-
-                <a href="#">
-
-                    View All →
-
-                </a>
-
-            </div>
-
-            <div id="recipe-list" class="recipe-list">
-
-                <!-- JavaScript -->
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= CATEGORY ================= -->
-
-    <section class="category">
-
-        <div class="container">
-
-            <div class="title-center">
-
-                <small>
-
-                    Explore
-
-                </small>
-
-                <h2>
-
-                    Browse Categories
-
-                </h2>
-
-            </div>
-
-            <div class="category-grid">
-
-                <div class="category-card">
-
-                    🥞
-
-                    <h3>Breakfast</h3>
-
-                </div>
-
-                <div class="category-card">
-
-                    🍝
-
-                    <h3>Lunch</h3>
-
-                </div>
-
-                <div class="category-card">
-
-                    🍜
-
-                    <h3>Dinner</h3>
-
-                </div>
-
-                <div class="category-card">
-
-                    🍰
-
-                    <h3>Dessert</h3>
-
-                </div>
-
-                <div class="category-card">
-
-                    🥗
-
-                    <h3>Healthy</h3>
-
-                </div>
-
-                <div class="category-card">
-
-                    ☕
-
-                    <h3>Drinks</h3>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= NEWSLETTER ================= -->
-
-    <section class="newsletter">
-
-        <div class="container newsletter-box">
-
-            <div>
-
-                <h2>
-
-                    Join Our Food Community
-
-                </h2>
-
-                <p>
-
-                    Dapatkan resep terbaru setiap minggu.
-
-                </p>
-
-            </div>
-
-            <form>
-
-                <input type="email" placeholder="Email Address">
-
-                <button>
-
-                    Subscribe
-
-                </button>
-
-            </form>
-
-        </div>
-
-    </section>
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="container footer">
-
-            <div>
-
-                <h2>
-
-                    🍽 Daily Delish
-
-                </h2>
-
-                <p>
-
-                    Share your recipe with the world.
-
-                </p>
-
-            </div>
-
-            <div>
-
-                <h4>
-
-                    Menu
-
-                </h4>
-
-                <a href="#">Home</a>
-
-                <a href="#">Recipes</a>
-
-                <a href="#">About</a>
-
-            </div>
-
-            <div>
-
-                <h4>
-
-                    Account
-
-                </h4>
-
-                <a href="login.html">Login</a>
-
-                <a href="register.html">Register</a>
-
-            </div>
-
-        </div>
-
-        <div class="copyright">
-
-            © 2025 Daily Delish
-
-        </div>
-
-    </footer>
-
-    <script src="js/main.js"></script>
-
-</body>
-
-</html>
-
 /* ===================================
-   DAILY DELISH
-   Version : 1.0
+   DAILY DELISH V2.0
 =================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================
+        ROOT
+========================== */
 
 :root{
 
@@ -354,7 +15,7 @@
     --secondary:#F7F3ED;
     --white:#FFFFFF;
     --black:#1E1E1E;
-    --gray:#777;
+    --gray:#777777;
     --light:#F9F9F9;
     --orange:#F5A623;
 
@@ -364,14 +25,22 @@
 
 }
 
+/* ==========================
+        RESET
+========================== */
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
@@ -379,17 +48,22 @@ body{
     font-family:"Poppins",sans-serif;
     background:var(--secondary);
     color:var(--black);
+    overflow-x:hidden;
 
 }
 
 img{
+
     width:100%;
     display:block;
+
 }
 
 a{
+
     text-decoration:none;
     color:inherit;
+
 }
 
 button{
@@ -404,23 +78,30 @@ button{
 .container{
 
     width:90%;
-    max-width:1280px;
+    max-width:1200px;
     margin:auto;
 
 }
 
-/* ===========================
+/* ==========================
         NAVBAR
-=========================== */
+========================== */
 
 header{
 
     position:fixed;
     top:0;
+    left:0;
     width:100%;
-    background:white;
+    height:90px;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(12px);
+
     z-index:999;
-    box-shadow:0 5px 15px rgba(0,0,0,.05);
+
+    box-shadow:0 4px 20px rgba(0,0,0,.05);
 
 }
 
@@ -456,7 +137,9 @@ nav{
 
 nav a{
 
-    color:#444;
+    position:relative;
+
+    color:#555;
 
     font-weight:500;
 
@@ -470,9 +153,31 @@ nav a:hover{
 
 }
 
-.active{
+nav a.active{
 
     color:var(--primary);
+
+}
+
+nav a.active::after,
+
+nav a:hover::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:100%;
+
+    height:3px;
+
+    background:var(--primary);
+
+    border-radius:20px;
 
 }
 
@@ -480,17 +185,19 @@ nav a:hover{
 
     display:flex;
 
+    align-items:center;
+
     gap:15px;
 
 }
 
 .login-btn{
 
-    padding:12px 22px;
-
-    border-radius:50px;
+    padding:12px 24px;
 
     border:2px solid var(--primary);
+
+    border-radius:50px;
 
     color:var(--primary);
 
@@ -508,13 +215,15 @@ nav a:hover{
 
 .register-btn{
 
-    padding:12px 22px;
-
-    border-radius:50px;
+    padding:12px 24px;
 
     background:var(--primary);
 
     color:white;
+
+    border-radius:50px;
+
+    transition:.3s;
 
 }
 
@@ -524,15 +233,15 @@ nav a:hover{
 
 }
 
-/* ===========================
+/* ==========================
           HERO
-=========================== */
+========================== */
 
 .hero{
 
     padding-top:150px;
 
-    padding-bottom:90px;
+    padding-bottom:100px;
 
 }
 
@@ -540,11 +249,11 @@ nav a:hover{
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
-
-    gap:70px;
+    grid-template-columns:repeat(2,1fr);
 
     align-items:center;
+
+    gap:70px;
 
 }
 
@@ -552,25 +261,25 @@ nav a:hover{
 
     display:inline-block;
 
-    padding:12px 20px;
+    padding:12px 22px;
 
     background:white;
 
     border-radius:50px;
 
+    color:var(--primary);
+
     box-shadow:var(--shadow);
 
     margin-bottom:25px;
-
-    color:var(--primary);
 
 }
 
 .hero-left h1{
 
-    font-size:70px;
+    font-size:68px;
 
-    line-height:80px;
+    line-height:78px;
 
     margin-bottom:25px;
 
@@ -581,8 +290,6 @@ nav a:hover{
     color:var(--gray);
 
     line-height:1.8;
-
-    font-size:17px;
 
     margin-bottom:35px;
 
@@ -600,11 +307,11 @@ nav a:hover{
 
     padding:15px 32px;
 
-    border-radius:50px;
-
     background:var(--primary);
 
     color:white;
+
+    border-radius:50px;
 
     font-size:16px;
 
@@ -630,6 +337,8 @@ nav a:hover{
 
     color:var(--primary);
 
+    transition:.3s;
+
 }
 
 .secondary:hover{
@@ -642,15 +351,15 @@ nav a:hover{
 
 .hero-right img{
 
-    border-radius:35px;
+    border-radius:30px;
 
     box-shadow:var(--shadow);
 
 }
 
-/* ===========================
-        TITLE
-=========================== */
+/* ==========================
+        SECTION TITLE
+========================== */
 
 section{
 
@@ -664,7 +373,7 @@ section{
 
     justify-content:space-between;
 
-    align-items:end;
+    align-items:flex-end;
 
     margin-bottom:40px;
 
@@ -674,13 +383,11 @@ section{
 
     color:var(--primary);
 
-    font-size:15px;
-
 }
 
 .title h2{
 
-    font-size:40px;
+    font-size:42px;
 
     margin-top:10px;
 
@@ -698,7 +405,7 @@ section{
 
     text-align:center;
 
-    margin-bottom:45px;
+    margin-bottom:50px;
 
 }
 
@@ -710,19 +417,451 @@ section{
 
 .title-center h2{
 
+    font-size:42px;
+
     margin-top:10px;
+
+}
+
+/* ==========================
+      RECIPE CARD
+========================== */
+
+.recipe-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.recipe-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.recipe-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.recipe-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.recipe-content{
+
+    padding:22px;
+
+}
+
+.recipe-content h3{
+
+    font-size:22px;
+
+    margin-bottom:12px;
+
+}
+
+.recipe-content p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+    margin-bottom:18px;
+
+}
+
+.recipe-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    color:var(--gray);
+
+    font-size:15px;
+
+}
+
+.recipe-content .primary{
+
+    width:100%;
+
+}
+
+
+/* ==========================
+      CATEGORY
+========================== */
+
+.category-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:25px;
+
+}
+
+.category-card{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.category-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.category-card span{
+
+    display:block;
+
+    font-size:52px;
+
+    margin-bottom:18px;
+
+}
+
+.category-card h3{
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+}
+
+.category-card p{
+
+    color:var(--gray);
+
+    font-size:15px;
+
+}
+
+
+/* ==========================
+      NEWSLETTER
+========================== */
+
+.newsletter-box{
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:30px;
+
+    padding:60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+.newsletter-box h2{
+
+    font-size:36px;
+
+    margin-bottom:10px;
+
+}
+
+.newsletter-box p{
+
+    color:#f1f1f1;
+
+}
+
+.newsletter-box form{
+
+    display:flex;
+
+    width:100%;
+
+    max-width:500px;
+
+}
+
+.newsletter-box input{
+
+    flex:1;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px 0 0 15px;
+
+    font-size:15px;
+
+}
+
+.newsletter-box input:focus{
+
+    outline:none;
+
+}
+
+.newsletter-box button{
+
+    padding:18px 28px;
+
+    background:var(--orange);
+
+    color:white;
+
+    border-radius:0 15px 15px 0;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================
+      FOOTER
+========================== */
+
+footer{
+
+    background:#1f2d27;
+
+    color:white;
+
+    margin-top:90px;
+
+}
+
+.footer{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:40px;
+
+    padding:70px 0;
+
+}
+
+.footer h2{
+
+    margin-bottom:15px;
+
+}
+
+.footer h4{
+
+    margin-bottom:20px;
+
+}
+
+.footer a{
+
+    display:block;
+
+    color:#ddd;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+.footer a:hover{
+
+    color:white;
+
+}
+
+.copyright{
+
+    text-align:center;
+
+    padding:20px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+}
+
+
+/* ==========================
+      RESPONSIVE HOME
+========================== */
+
+@media(max-width:992px){
+
+.hero-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.hero-left{
+
+    text-align:center;
+
+}
+
+.hero-button{
+
+    justify-content:center;
+
+}
+
+.hero-left h1{
+
+    font-size:52px;
+
+    line-height:60px;
+
+}
+
+.newsletter-box{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.footer{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:18px;
+
+    height:auto;
+
+    padding:20px 0;
+
+}
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.menu{
+
+    justify-content:center;
+
+}
+
+.hero{
+
+    padding-top:220px;
+
+}
+
+.hero-left h1{
 
     font-size:40px;
 
+    line-height:48px;
+
 }
-/* ===========================
-        LOGIN
-=========================== */
+
+.newsletter-box{
+
+    padding:35px;
+
+}
+
+.newsletter-box form{
+
+    flex-direction:column;
+
+}
+
+.newsletter-box input{
+
+    width:100%;
+
+    border-radius:15px;
+
+    margin-bottom:12px;
+
+}
+
+.newsletter-box button{
+
+    width:100%;
+
+    border-radius:15px;
+
+}
+
+}
+
+/* ==========================
+        LOGIN & REGISTER
+========================== */
 
 .login-page{
 
-    background:#F7F3ED;
-
+    background:var(--secondary);
     min-height:100vh;
 
     display:flex;
@@ -731,29 +870,31 @@ section{
 
     align-items:center;
 
+    padding:40px;
+
 }
 
 .login-wrapper{
 
     width:1100px;
 
+    background:white;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    background:white;
-
-    border-radius:35px;
-
-    overflow:hidden;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.08);
+    box-shadow:var(--shadow);
 
 }
 
 .login-image{
 
-    background:#355C4D;
+    background:var(--primary);
 
     display:flex;
 
@@ -768,6 +909,7 @@ section{
 .login-image img{
 
     width:90%;
+    max-width:420px;
 
 }
 
@@ -781,27 +923,29 @@ section{
 
     text-align:center;
 
-    margin-bottom:40px;
+    margin-bottom:35px;
 
 }
 
 .login-logo h2{
 
-    margin-top:15px;
-
     font-size:34px;
+
+    margin-top:15px;
 
 }
 
 .login-logo p{
 
-    color:#777;
+    color:var(--gray);
+
+    margin-top:8px;
 
 }
 
 .input-group{
 
-    margin-bottom:25px;
+    margin-bottom:22px;
 
 }
 
@@ -811,15 +955,19 @@ section{
 
     margin-bottom:10px;
 
-    font-weight:500;
+    font-weight:600;
 
 }
 
-.input-group input{
+.input-group input,
+
+.input-group textarea,
+
+.input-group select{
 
     width:100%;
 
-    padding:16px;
+    padding:15px;
 
     border:2px solid #ddd;
 
@@ -827,15 +975,29 @@ section{
 
     font-size:15px;
 
+    font-family:Poppins;
+
     transition:.3s;
 
 }
 
-.input-group input:focus{
+.input-group textarea{
 
-    border-color:#355C4D;
+    resize:vertical;
+
+    min-height:140px;
+
+}
+
+.input-group input:focus,
+
+.input-group textarea:focus,
+
+.input-group select:focus{
 
     outline:none;
+
+    border-color:var(--primary);
 
 }
 
@@ -845,25 +1007,23 @@ section{
 
     padding:18px;
 
-    background:#355C4D;
+    border-radius:15px;
+
+    background:var(--primary);
 
     color:white;
-
-    border:none;
-
-    border-radius:15px;
 
     font-size:16px;
 
     font-weight:600;
 
-    cursor:pointer;
+    transition:.3s;
 
 }
 
 .login-submit:hover{
 
-    background:#28463A;
+    background:var(--primary-dark);
 
 }
 
@@ -877,39 +1037,20 @@ section{
 
 .register-link a{
 
-    color:#355C4D;
+    color:var(--primary);
 
     font-weight:600;
 
 }
 
-/* Responsive */
 
-@media(max-width:900px){
-
-.login-wrapper{
-
-grid-template-columns:1fr;
-
-width:95%;
-
-}
-
-.login-image{
-
-display:none;
-
-}
-
-}
-
-/* =======================
-      DASHBOARD
-======================= */
+/* ==========================
+        DASHBOARD
+========================== */
 
 .dashboard-page{
 
-    background:#F7F3ED;
+    background:var(--secondary);
 
 }
 
@@ -917,21 +1058,22 @@ display:none;
 
     display:grid;
 
-    grid-template-columns:260px 1fr;
+    grid-template-columns:270px 1fr;
 
     min-height:100vh;
 
 }
 
+
 /* Sidebar */
 
 .sidebar{
 
-    background:#355C4D;
+    background:var(--primary);
 
     color:white;
 
-    padding:30px;
+    padding:35px;
 
 }
 
@@ -941,7 +1083,7 @@ display:none;
 
     font-weight:700;
 
-    margin-bottom:50px;
+    margin-bottom:45px;
 
 }
 
@@ -953,11 +1095,11 @@ display:none;
 
 .sidebar li{
 
-    padding:16px;
+    padding:16px 18px;
+
+    border-radius:15px;
 
     margin-bottom:10px;
-
-    border-radius:12px;
 
     cursor:pointer;
 
@@ -967,11 +1109,12 @@ display:none;
 
 .sidebar li:hover,
 
-.sidebar .active{
+.sidebar li.active{
 
-    background:rgba(255,255,255,.12);
+    background:rgba(255,255,255,.15);
 
 }
+
 
 /* Content */
 
@@ -989,11 +1132,49 @@ display:none;
 
     align-items:center;
 
-    margin-bottom:35px;
+    margin-bottom:30px;
 
 }
 
-/* Statistik */
+
+/* ==========================
+        SEARCH
+========================== */
+
+.dashboard-search{
+
+    margin-bottom:30px;
+
+}
+
+.dashboard-search input{
+
+    width:100%;
+
+    max-width:420px;
+
+    padding:15px 20px;
+
+    border:2px solid #ddd;
+
+    border-radius:15px;
+
+    font-size:15px;
+
+}
+
+.dashboard-search input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+}
+
+
+/* ==========================
+        STAT CARD
+========================== */
 
 .stats{
 
@@ -1011,9 +1192,9 @@ display:none;
 
     background:white;
 
-    padding:30px;
+    border-radius:22px;
 
-    border-radius:20px;
+    padding:30px;
 
     box-shadow:var(--shadow);
 
@@ -1021,7 +1202,7 @@ display:none;
 
 .stat-card h3{
 
-    font-size:40px;
+    font-size:42px;
 
     color:var(--primary);
 
@@ -1029,29 +1210,38 @@ display:none;
 
 .stat-card p{
 
-    margin-top:8px;
+    color:var(--gray);
 
-    color:#777;
+    margin-top:8px;
 
 }
 
-/* Table */
+
+/* ==========================
+        TABLE
+========================== */
 
 .table-box{
 
     background:white;
 
-    border-radius:20px;
-
     padding:25px;
+
+    border-radius:22px;
 
     box-shadow:var(--shadow);
 
 }
 
-.table{
+.table-header{
 
-    width:100%;
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
 
 }
 
@@ -1083,9 +1273,9 @@ td{
 
 td img{
 
-    width:70px;
+    width:80px;
 
-    height:70px;
+    height:80px;
 
     object-fit:cover;
 
@@ -1099,11 +1289,11 @@ td img{
 
     color:white;
 
-    padding:8px 15px;
+    padding:10px 16px;
 
     border-radius:10px;
 
-    margin-right:10px;
+    margin-right:8px;
 
 }
 
@@ -1113,114 +1303,35 @@ td img{
 
     color:white;
 
-    padding:8px 15px;
+    padding:10px 16px;
 
     border-radius:10px;
 
 }
 
-/* Responsive */
-
-@media(max-width:900px){
-
-.dashboard{
-
-grid-template-columns:1fr;
-
-}
-
-.sidebar{
-
-display:none;
-
-}
-
-.stats{
-
-grid-template-columns:1fr;
-
-}
-
-.topbar{
-
-flex-direction:column;
-
-gap:20px;
-
-align-items:flex-start;
-
-}
-
-}
 
 /* ==========================
-      FORM RECIPE
+      FORM CARD
 ========================== */
 
 .form-card{
 
-background:white;
+    background:white;
 
-padding:35px;
+    padding:35px;
 
-margin-top:30px;
+    border-radius:25px;
 
-border-radius:25px;
+    box-shadow:var(--shadow);
 
-box-shadow:var(--shadow);
-
-}
-
-.form-card .input-group{
-
-margin-bottom:22px;
+    margin-top:25px;
 
 }
 
-.form-card label{
 
-display:block;
-
-margin-bottom:8px;
-
-font-weight:600;
-
-}
-
-.form-card input,
-.form-card select,
-.form-card textarea{
-
-width:100%;
-
-padding:15px;
-
-border:2px solid #ddd;
-
-border-radius:15px;
-
-font-size:15px;
-
-font-family:Poppins;
-
-resize:none;
-
-}
-
-.form-card input:focus,
-.form-card textarea:focus,
-.form-card select:focus{
-
-outline:none;
-
-border-color:#355C4D;
-
-
-}
-
-/* ======================
+/* ==========================
       IMAGE PREVIEW
-====================== */
+========================== */
 
 .image-preview{
 
@@ -1240,89 +1351,420 @@ border-color:#355C4D;
 
     border-radius:20px;
 
-    border:2px dashed #ccc;
-    
+    border:2px dashed #ddd;
 
 }
 
 
 /* ==========================
-      RECIPE DETAIL
+      RESPONSIVE
 ========================== */
+
+@media(max-width:992px){
+
+.dashboard{
+
+    grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+    display:none;
+
+}
+
+.stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.login-wrapper{
+
+    grid-template-columns:1fr;
+
+}
+
+.login-image{
+
+    display:none;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.content{
+
+    padding:20px;
+
+}
+
+.table-box{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    min-width:700px;
+
+}
+
+}
+
+/* ===================================
+      RECIPE DETAIL
+=================================== */
 
 .recipe-detail{
 
-padding:150px 0;
+    padding:140px 0 80px;
 
 }
 
 .recipe-detail .container{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
-gap:50px;
+    gap:60px;
 
-align-items:start;
+    align-items:start;
 
 }
 
 .detail-image img{
 
-width:100%;
+    width:100%;
 
-border-radius:25px;
+    border-radius:25px;
 
-box-shadow:var(--shadow);
+    box-shadow:var(--shadow);
 
 }
 
 .detail-content h1{
 
-font-size:45px;
+    font-size:48px;
 
-margin:20px 0;
+    margin-bottom:20px;
+
+    color:var(--primary);
 
 }
 
 .detail-content p{
 
-line-height:1.8;
+    line-height:1.8;
 
-margin:20px 0;
+    color:var(--gray);
 
-color:#666;
+    margin-bottom:20px;
 
 }
 
 .detail-info{
 
-display:flex;
+    display:flex;
 
-gap:20px;
+    flex-wrap:wrap;
 
-margin-bottom:20px;
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.detail-info span{
+
+    background:white;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    box-shadow:var(--shadow);
+
+    font-size:14px;
 
 }
 
 .detail-content h2{
 
-margin-top:30px;
+    margin-top:30px;
+
+    margin-bottom:15px;
+
+    color:var(--primary);
 
 }
 
-.detail-content hr{
+.detail-content ul{
 
-margin:30px 0;
-
-border:none;
-
-height:1px;
-
-background:#eee;
+    padding-left:20px;
 
 }
+
+.detail-content li{
+
+    margin-bottom:12px;
+
+    line-height:1.8;
+
+}
+
+/* ===================================
+        RECIPES PAGE
+=================================== */
+
+.catalog-hero{
+
+    padding:140px 0 60px;
+
+    text-align:center;
+
+}
+
+.catalog-hero h1{
+
+    font-size:50px;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.catalog-hero p{
+
+    color:var(--gray);
+
+    max-width:650px;
+
+    margin:auto;
+
+}
+
+.catalog-search{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:50px;
+
+}
+
+.catalog-search input{
+
+    width:100%;
+
+    max-width:550px;
+
+    padding:16px 20px;
+
+    border:2px solid #ddd;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+}
+
+.catalog-search input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+}
+
+/* ===================================
+      ABOUT PAGE
+=================================== */
+
+.about-section{
+
+    padding:140px 0 80px;
+
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.about-grid img{
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.about-text h1{
+
+    font-size:48px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.about-text p{
+
+    color:var(--gray);
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+
+}
+
+/* ===================================
+      CONTACT PAGE
+=================================== */
+
+.contact-section{
+
+    padding:140px 0 80px;
+
+}
+
+.contact-card{
+
+    max-width:800px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.contact-card h1{
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+    color:var(--primary);
+
+}
+
+.contact-card p{
+
+    text-align:center;
+
+    color:var(--gray);
+
+    margin-bottom:35px;
+
+}
+
+.contact-card textarea{
+
+    min-height:180px;
+
+}
+
+.contact-card button{
+
+    width:100%;
+
+}
+
+/* ===================================
+      ANIMATION
+=================================== */
+
+.fade-up{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================
+      SCROLLBAR
+=================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ===================================
+      MOBILE
+=================================== */
 
 @media(max-width:900px){
 
@@ -1330,243 +1772,36 @@ background:#eee;
 
 grid-template-columns:1fr;
 
+}
 
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.detail-content h1{
+
+font-size:36px;
+
+}
+
+.about-text h1{
+
+font-size:36px;
+
+}
+
+.catalog-hero h1{
+
+font-size:38px;
+
+}
+
+.contact-card{
+
+padding:30px;
 
 }
 
 }
-
-
-/* ==========================
-    DASHBOARD SEARCH
-========================== */
-
-.dashboard-search{
-
-    margin:25px 0;
-
-}
-
-.dashboard-search input{
-
-    width:100%;
-
-    max-width:400px;
-
-    padding:15px 20px;
-
-    border:2px solid #ddd;
-
-    border-radius:15px;
-
-    font-size:15px;
-
-    transition:.3s;
-
-}
-
-.dashboard-search input:focus{
-
-    outline:none;
-
-    border-color:#355C4D;
-
-}
-
-.table-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:20px;
-
-}
-
-table button{
-
-    margin-right:8px;
-
-}
-
-.recipe-list{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-}
-
-.recipe-card{
-    background:#fff;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
-    transition:.3s;
-}
-
-.recipe-card:hover{
-    transform:translateY(-8px);
-}
-
-.recipe-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.recipe-content{
-    padding:20px;
-}
-
-.recipe-content h3{
-    margin-bottom:10px;
-}
-
-.recipe-content p{
-    color:#777;
-    line-height:1.6;
-}
-
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:25px;
-}
-
-.category-card{
-    background:white;
-    border-radius:20px;
-    padding:35px 20px;
-    text-align:center;
-    box-shadow:var(--shadow);
-    transition:.3s;
-    cursor:pointer;
-}
-
-.category-card:hover{
-    transform:translateY(-6px);
-}
-
-.category-card{
-    font-size:45px;
-}
-
-.category-card h3{
-    margin-top:15px;
-}
-
-.newsletter-box{
-    background:#355C4D;
-    color:white;
-    padding:50px;
-    border-radius:30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:30px;
-}
-
-.newsletter-box form{
-    display:flex;
-}
-
-.newsletter-box input{
-    padding:16px;
-    width:280px;
-    border:none;
-    border-radius:15px 0 0 15px;
-}
-
-.newsletter-box button{
-    padding:16px 25px;
-    background:#F5A623;
-    color:white;
-    border-radius:0 15px 15px 0;
-}
-
-footer{
-    background:#1f2d27;
-    color:white;
-    margin-top:80px;
-}
-
-.footer{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:40px;
-    padding:70px 0;
-}
-
-.footer h4{
-    margin-bottom:20px;
-}
-
-.footer a{
-    display:block;
-    margin-bottom:10px;
-    color:#ddd;
-}
-
-.footer a:hover{
-    color:white;
-}
-
-.copyright{
-    text-align:center;
-    padding:20px;
-    border-top:1px solid rgba(255,255,255,.15);
-}
-
-@media(max-width:768px){
-
-.hero-container{
-    grid-template-columns:1fr;
-}
-
-.hero-left h1{
-    font-size:48px;
-    line-height:58px;
-}
-
-.navbar{
-    flex-direction:column;
-    height:auto;
-    padding:20px 0;
-}
-
-nav{
-    margin:15px 0;
-}
-
-.newsletter-box{
-    flex-direction:column;
-    text-align:center;
-}
-
-.footer{
-    grid-template-columns:1fr;
-}
-
-    
-
-}
-
-.category-page{
-    padding:40px 0 80px;
-}
-
-.category-card{
-    cursor:pointer;
-}
-
-.category-card p{
-    margin-top:10px;
-    color:#777;
-}
-
-.category-card:hover{
-    transform:translateY(-8px);
-}
-
-    
