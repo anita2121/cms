@@ -1542,7 +1542,7 @@ table{
 
 .catalog-hero h1{
 
-    font-size:50px;
+    font-size:48px;
 
     color:var(--primary);
 
@@ -1552,13 +1552,17 @@ table{
 
 .catalog-hero p{
 
-    color:var(--gray);
-
     max-width:650px;
 
     margin:auto;
 
+    color:var(--gray);
+
+    line-height:1.8;
+
 }
+
+/* SEARCH */
 
 .catalog-search{
 
@@ -1566,81 +1570,69 @@ table{
 
     justify-content:center;
 
-    margin-bottom:50px;
+    margin:50px 0;
 
 }
 
-.catalog-search input{
+.search-box{
 
     width:100%;
 
-    max-width:550px;
+    max-width:700px;
 
-    padding:16px 20px;
+    background:white;
 
-    border:2px solid #ddd;
-
-    border-radius:50px;
-
-    font-size:16px;
-
-}
-
-.catalog-search input:focus{
-
-    outline:none;
-
-    border-color:var(--primary);
-
-}
-
-/* ===================================
-      ABOUT PAGE
-=================================== */
-
-.about-section{
-
-    padding:140px 0 80px;
-
-}
-
-.about-grid{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:60px;
+    display:flex;
 
     align-items:center;
 
-}
+    border-radius:60px;
 
-.about-grid img{
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
 
-    border-radius:30px;
-
-    box-shadow:var(--shadow);
+    padding:8px;
 
 }
 
-.about-text h1{
+.search-box input{
 
-    font-size:48px;
+    flex:1;
 
-    color:var(--primary);
+    border:none;
 
-    margin-bottom:20px;
+    outline:none;
+
+    padding:18px 24px;
+
+    font-size:16px;
+
+    background:transparent;
 
 }
 
-.about-text p{
+.search-box button{
 
-    color:var(--gray);
+    padding:16px 30px;
 
-    line-height:1.9;
+    background:#355C4D;
 
-    margin-bottom:20px;
+    color:white;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.search-box button:hover{
+
+    background:#28463A;
 
 }
 
