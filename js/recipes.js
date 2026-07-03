@@ -112,20 +112,39 @@ function renderRecipes(data){
 }
 
 // ===============================
+// DATA AWAL
+// ===============================
+
+let currentRecipes = [...recipes];
+
+// ===============================
 // FILTER DARI URL
 // ===============================
 
 const params = new URLSearchParams(window.location.search);
-
 const selectedCategory = params.get("category");
-
-let currentRecipes = recipes;
 
 if(selectedCategory){
 
     currentRecipes = recipes.filter(recipe =>
         recipe.category.toLowerCase() === selectedCategory.toLowerCase()
     );
+
+    // Aktifkan tombol sesuai kategori
+    filterButtons.forEach(button=>{
+
+        if(button.dataset.category &&
+           button.dataset.category.toLowerCase() === selectedCategory.toLowerCase()){
+
+            button.classList.add("active");
+
+        }else{
+
+            button.classList.remove("active");
+
+        }
+
+    });
 
 }
 
@@ -154,7 +173,7 @@ if(searchInput){
 }
 
 // ===============================
-// BUTTON FILTER
+// FILTER BUTTON
 // ===============================
 
 filterButtons.forEach(button=>{
@@ -165,25 +184,23 @@ filterButtons.forEach(button=>{
 
         this.classList.add("active");
 
-        const category = this.textContent.trim();
+        const category = this.dataset.category;
 
-        if(category==="All"){
+        if(category === "All"){
 
-            currentRecipes = recipes;
+            currentRecipes = [...recipes];
 
         }else{
 
-            currentRecipes = recipes.filter(recipe=>
-
-                recipe.category===category
-
+            currentRecipes = recipes.filter(recipe =>
+                recipe.category === category
             );
 
         }
 
         if(searchInput){
 
-            searchInput.value="";
+            searchInput.value = "";
 
         }
 
