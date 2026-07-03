@@ -1152,3 +1152,67 @@ align-items:flex-start;
 }
 
 }
+
+/* ==========================
+      FORM RECIPE
+========================== */
+
+.form-card{
+
+background:white;
+
+padding:35px;
+
+margin-top:30px;
+
+border-radius:25px;
+
+box-shadow:var(--shadow);
+
+}
+
+.form-card .input-group{
+
+margin-bottom:22px;
+
+}
+
+.form-card label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-weight:600;
+
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea{
+
+width:100%;
+
+padding:15px;
+
+border:2px solid #ddd;
+
+border-radius:15px;
+
+font-size:15px;
+
+font-family:Poppins;
+
+resize:none;
+
+}
+
+.form-card input:focus,
+.form-card textarea:focus,
+.form-card select:focus{
+
+outline:none;
+
+border-color:#355C4D;
+
+}
