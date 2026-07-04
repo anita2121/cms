@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | Daily Delish</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            🍽 <span>Daily Delish</span>
+
+        </div>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+
+                🏠 Dashboard
+
+            </li>
+
+            <li onclick="location.href='add-recipe.html'">
+
+                ➕ Add Recipe
+
+            </li>
+
+            <li onclick="location.href='recipes.html'">
+
+                📖 Recipes
+
+            </li>
+
+            <li onclick="location.href='categories.html'">
+
+                📂 Categories
+
+            </li>
+
+            <li onclick="location.href='index.html'">
+
+                🌐 View Website
+
+            </li>
+
+            <li class="active">
+
+                👤 Profile
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ================= CONTENT ================= -->
+
+    <main class="content">
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>
+
+                    Edit Profile
+
+                </h1>
+
+                <p>
+
+                    Kelola informasi akun Daily Delish milikmu.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <section
+                <div class="profile-avatar">
+
+                    <img
+                        id="previewPhoto"
+                        src="assets/images/default-avatar.png"
+                        alt="Profile">
+
+                    <input
+                        type="file"
+                        id="photo"
+                        accept="image/*">
+
+                </div>
+
+                <div class="profile-form">
+
+                    <div class="input-group">
+
+                        <label>Nama</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Nama lengkap">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Email">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Password Baru</label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Kosongkan jika tidak ingin mengganti">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Konfirmasi Password</label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Ulangi password">
+
+                    </div>
+
+                    <div
+                        style="display:flex;gap:15px;flex-wrap:wrap;margin-top:25px;">
+
+                        <button
+                            id="saveProfile"
+                            class="primary">
+
+                            💾 Save Changes
+
+                        </button>
+
+                        <button
+                            id="deleteAccount"
+                            type="button"
+                            class="delete">
+
+                            🗑 Delete Account
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+  <script src="js/profile.js"></script>
+
+</body>
+
+</html>
