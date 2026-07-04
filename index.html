@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Google Font -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,257 +23,354 @@
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+    <!-- ================= NAVBAR ================= -->
 
-<header>
+    <header>
 
-    <div class="container navbar">
+        <div class="container navbar">
 
-        <div class="logo">
+            <div class="logo">
 
-            🍽️ Daily Delish
+                🍽️ Daily Delish
 
-        </div>
+            </div>
 
-        <nav>
+            <nav>
 
-            <a href="index.html" class="active">Home</a>
+                <a href="index.html" class="active">Home</a>
 
-            <a href="recipes.html">Recipes</a>
+                <a href="recipes.html">Recipes</a>
 
-            <a href="categories.html">Categories</a>
+                <a href="categories.html">Categories</a>
 
-            <a href="about.html">About</a>
+                <a href="about.html">About</a>
 
-        </nav>
+            </nav>
 
-        <div class="menu">
+            <!-- DIUBAH -->
+            <div class="menu" id="menu">
 
-            <a href="login.html" class="login-btn">
-
-                Login
-
-            </a>
-
-            <a href="register.html" class="register-btn">
-
-                Register
-
-            </a>
-
-        </div>
-
-    </div>
-
-</header>
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-    <div class="container hero-container">
-
-        <div class="hero-left">
-
-            <span class="tag">
-
-                🍃 Healthy Food Platform
-
-            </span>
-
-            <h1>
-
-                Cook Better,
-                <br>
-                Eat Happier.
-
-            </h1>
-
-            <p>
-
-                Temukan ribuan resep masakan rumahan,
-                dessert, minuman, hingga makanan
-                internasional yang dibuat oleh
-                komunitas Daily Delish.
-
-            </p>
-
-            <div class="hero-button">
-
-                <button
-                    class="primary"
-                    onclick="location.href='recipes.html'">
-
-                    Explore Recipes
-
-                </button>
-
-                <button
-                    class="secondary"
-                    onclick="location.href='login.html'">
-
-                    Share Recipe
-
-                </button>
+                <!-- Akan diisi oleh auth.js -->
 
             </div>
 
         </div>
 
-        <div class="hero-right">
+    </header>
 
-            <img src="assets/images/hero.png" alt="Hero">
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="container hero-container">
+
+            <div class="hero-left">
+
+                <span class="tag">
+
+                    🍃 Healthy Food Platform
+
+                </span>
+
+                <h1>
+
+                    Cook Better,
+                    <br>
+                    Eat Happier.
+
+                </h1>
+
+                <p>
+
+                    Temukan ribuan resep masakan rumahan,
+                    dessert, minuman, hingga makanan
+                    internasional yang dibuat oleh
+                    komunitas Daily Delish.
+
+                </p>
+
+                <div class="hero-button">
+
+                    <button
+                        class="primary"
+                        onclick="location.href='recipes.html'">
+
+                        Explore Recipes
+
+                    </button>
+
+                    <!-- DIUBAH -->
+                    <button
+                        class="secondary"
+                        id="shareBtn">
+
+                        Share Recipe
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="hero-right">
+
+                <img
+                    src="assets/images/hero.png"
+                    alt="Hero">
+
+            </div>
+
+        
+        </div>
+
+    </section>
+
+        <!-- ================= POPULAR ================= -->
+
+    <section class="popular">
+
+        <div class="container">
+
+            <div class="title">
+
+                <div>
+
+                    <small>Popular Recipe</small>
+
+                    <h2>
+                        Today's Recommendation
+                    </h2>
+
+                </div>
+
+                <a href="recipes.html">
+                    View All →
+                </a>
+
+            </div>
+
+            <div
+                id="recipe-list"
+                class="recipe-list">
+
+                <!-- JavaScript -->
+
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    <!-- ================= CATEGORY ================= -->
 
-<!-- ================= POPULAR ================= -->
+    <section class="category">
 
-<section class="popular">
+        <div class="container">
 
-    <div class="container">
+            <div class="title-center">
 
-        <div class="title">
-
-            <div>
-
-                <small>Popular Recipe</small>
+                <small>
+                    Explore
+                </small>
 
                 <h2>
-
-                    Today's Recommendation
-
+                    Browse Categories
                 </h2>
 
             </div>
 
-            <a href="recipes.html">
+            <div class="category-grid">
 
-                View All →
+                <div
+                    class="category-card"
+                    onclick="location.href='categories.html'">
 
-            </a>
+                    🥞
 
-        </div>
+                    <h3>Breakfast</h3>
 
-        <div
-            id="recipe-list"
-            class="recipe-list">
+                </div>
 
-        </div>
+                <div
+                    class="category-card"
+                    onclick="location.href='categories.html'">
 
-    </div>
+                    🍝
 
-</section>
+                    <h3>Lunch</h3>
 
-<!-- ================= NEWSLETTER ================= -->
+                </div>
 
-<section class="newsletter">
+                <div
+                    class="category-card"
+                    onclick="location.href='categories.html'">
 
-    <div class="container newsletter-box">
+                    🍜
 
-        <div>
+                    <h3>Dinner</h3>
 
-            <h2>
+                </div>
 
-                Join Our Food Community
+                <div
+                    class="category-card"
+                    onclick="location.href='categories.html'">
 
-            </h2>
+                    🍰
 
-            <p>
+                    <h3>Dessert</h3>
 
-                Dapatkan resep terbaru setiap minggu.
+                </div>
 
-            </p>
+                <div
+                    class="category-card"
+                    onclick="location.href='categories.html'">
 
-        </div>
+                    🥗
 
-        <form>
+                    <h3>Healthy</h3>
 
-            <input
-                type="email"
-                placeholder="Email Address">
+                </div>
 
-            <button>
+                <div
+                    class="category-card"
+                    onclick="location.href='categories.html'">
 
-                Subscribe
+                    ☕
 
-            </button>
+                    <h3>Drinks</h3>
 
-        </form>
+                </div>
 
-    </div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div class="container footer">
-
-        <div>
-
-            <h2>
-
-                🍽️ Daily Delish
-
-            </h2>
-
-            <p>
-
-                Share your recipe with the world.
-
-            </p>
+            </div>
 
         </div>
 
-        <div>
+    </section>
 
-            <h4>
+        <!-- ================= NEWSLETTER ================= -->
 
-                Menu
+    <section class="newsletter">
 
-            </h4>
+        <div class="container newsletter-box">
 
-            <a href="index.html">Home</a>
+            <div>
 
-            <a href="recipes.html">Recipes</a>
+                <h2>
+                    Join Our Food Community
+                </h2>
 
-            <a href="categories.html">Categories</a>
+                <p>
+                    Dapatkan resep terbaru setiap minggu.
+                </p>
 
-            <a href="about.html">About</a>
+            </div>
+
+            <form>
+
+                <input
+                    type="email"
+                    placeholder="Email Address">
+
+                <button>
+                    Subscribe
+                </button>
+
+            </form>
 
         </div>
 
-        <div>
+    </section>
 
-            <h4>
+    <!-- ================= FOOTER ================= -->
 
-                Account
+    <footer>
 
-            </h4>
+        <div class="container footer">
 
-            <a href="login.html">Login</a>
+            <div>
 
-            <a href="register.html">Register</a>
+                <h2>
+                    🍽️ Daily Delish
+                </h2>
+
+                <p>
+                    Share your recipe with the world.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>
+                    Menu
+                </h4>
+
+                <a href="index.html">Home</a>
+
+                <a href="recipes.html">Recipes</a>
+
+                <a href="categories.html">Categories</a>
+
+                <a href="about.html">About</a>
+
+            </div>
+
+            <div>
+
+                <h4>
+                    Account
+                </h4>
+
+                <!-- DIUBAH -->
+                <div id="footer-account">
+
+                    <!-- Akan diisi oleh auth.js -->
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
+        <div class="copyright">
+            © 2025 Daily Delish
+        </div>
 
-    <div class="copyright">
+    </footer>
 
-        © 2025 Daily Delish
+        <script src="js/main.js"></script>
 
-    </div>
+    <!-- Script login -->
+    <script src="js/auth.js"></script>
 
-</footer>
+    <script>
 
-<script src="js/main.js"></script>
+        const shareBtn = document.getElementById("shareBtn");
 
-</body>
+        if (shareBtn) {
+
+            if (localStorage.getItem("login") === "true") {
+
+                shareBtn.onclick = function () {
+
+                    location.href = "dashboard.html";
+
+                };
+
+            } else {
+
+                shareBtn.onclick = function () {
+
+                    location.href = "login.html";
+
+                };
+
+            }
+
+        }
+
+    </script>
+
+    </body>
 
 </html>
