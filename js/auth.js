@@ -4,6 +4,8 @@
 
 const form = document.getElementById("loginForm");
 
+if (form) {
+
 form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
@@ -58,6 +60,104 @@ localStorage.setItem("userEmail", result.user.email);
     alert(err.message);
 
     
+    }
+
+});
+
+// ===============================
+// NAVBAR & FOOTER AUTH
+// ===============================
+
+const isLogin = localStorage.getItem("login") === "true";
+
+const menu = document.getElementById("menu");
+const footerAccount = document.getElementById("footer-account");
+
+if (menu) {
+
+    if (isLogin) {
+
+        menu.innerHTML = `
+            <a href="dashboard.html" class="login-btn">
+                Dashboard
+            </a>
+
+            <a href="#" class="register-btn" id="logoutBtn">
+                Logout
+            </a>
+        `;
+
+    } else {
+
+        menu.innerHTML = `
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+            <a href="register.html" class="register-btn">
+                Register
+            </a>
+        `;
+
+    }
+
+}
+
+if (footerAccount) {
+
+    if (isLogin) {
+
+        footerAccount.innerHTML = `
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="#" id="footerLogout">
+                Logout
+            </a>
+        `;
+
+    } else {
+
+        footerAccount.innerHTML = `
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="register.html">
+                Register
+            </a>
+        `;
+
+    }
+
+}
+
+// ===============================
+// LOGOUT
+// ===============================
+
+document.addEventListener("click", function (e) {
+
+    if (
+        e.target.id === "logoutBtn" ||
+        e.target.id === "footerLogout"
+    ) {
+
+        e.preventDefault();
+
+        if (!confirm("Yakin ingin logout?")) return;
+
+        localStorage.removeItem("login");
+        localStorage.removeItem("currentUser");
+        localStorage.removeItem("userId");
+        localStorage.removeItem("userName");
+        localStorage.removeItem("userEmail");
+
+        alert("Logout berhasil!");
+
+        location.href = "index.html";
+
     }
 
 });
