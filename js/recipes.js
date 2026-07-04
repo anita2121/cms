@@ -2,57 +2,7 @@
 // DAILY DELISH - RECIPES
 // ===============================
 
-const recipes = [
-
-{
-    id:1,
-    title:"Classic Pancake",
-    category:"Breakfast",
-    time:"20 Minutes",
-    image:"assets/images/breakfast.jpg"
-},
-
-{
-    id:2,
-    title:"Creamy Pasta",
-    category:"Lunch",
-    time:"30 Minutes",
-    image:"assets/images/lunch.jpg"
-},
-
-{
-    id:3,
-    title:"Chocolate Cake",
-    category:"Dessert",
-    time:"50 Minutes",
-    image:"assets/images/dessert.jpg"
-},
-
-{
-    id:4,
-    title:"Fresh Salad",
-    category:"Healthy",
-    time:"15 Minutes",
-    image:"assets/images/healthy.jpg"
-},
-
-{
-    id:5,
-    title:"Orange Juice",
-    category:"Drinks",
-    time:"10 Minutes",
-    image:"assets/images/drinks.jpg"
-},
-
-{
-    id:6,
-    title:"Grilled Chicken",
-    category:"Dinner",
-    time:"40 Minutes",
-    image:"assets/images/dinner.jpg"
-}
-
-];
+const API_URL = "https://cms-api-workerr.widyazef28.workers.dev";
 
 // ===============================
 // ELEMENT
@@ -62,15 +12,63 @@ const recipeList = document.getElementById("recipe-list");
 const searchInput = document.getElementById("searchRecipe");
 const filterButtons = document.querySelectorAll(".filter-category button");
 
+let recipes = [];
+let currentRecipes = [];
+
+// ===============================
+// LOAD RECIPES
+// ===============================
+
+async function loadRecipes() {
+
+    try {
+
+        const response = await fetch(`${API_URL}/recipes`);
+
+        const result = await response.json();
+
+        if (!result.success) {
+
+            recipeList.innerHTML = `
+                <h2 style="text-align:center;width:100%;padding:50px;">
+                    Gagal mengambil data resep.
+                </h2>
+            `;
+
+            return;
+
+        }
+
+        recipes = result.data;
+        currentRecipes = [...recipes];
+
+        filterFromURL();
+
+        renderRecipes(currentRecipes);
+
+    } catch (err) {
+
+        console.error(err);
+
+        recipeList.innerHTML = `
+            <h2 style="text-align:center;width:100%;padding:50px;">
+                Terjadi kesalahan.
+            </h2>
+        `;
+
+    }
+
+}
+
 // ===============================
 // RENDER
 // ===============================
 
-function renderRecipes(data){
+function renderRecipes(data) {
 
     recipeList.innerHTML = "";
 
-    if(data.length === 0){
+    if (data.length === 0) {
 
         recipeList.innerHTML = `
             <h2 style="text-align:center;width:100%;padding:50px;">
@@ -79,15 +77,18 @@ function renderRecipes(data){
         `;
 
         return;
+
     }
 
-    data.forEach(recipe=>{
+    data.forEach(recipe => {
 
         recipeList.innerHTML += `
 
         <div class="recipe-card">
 
-            <img src="${recipe.image}" alt="${recipe.title}">
+            <img
+                src="${recipe.image || 'assets/images/no-image.png'}"
+                alt="${recipe.title}">
 
             <div class="recipe-content">
 
@@ -95,11 +96,15 @@ function renderRecipes(data){
 
                 <p><strong>Category:</strong> ${recipe.category}</p>
 
-                <p><strong>Time:</strong> ${recipe.time}</p>
+                <p><strong>Time:</strong> ${recipe.time} Minutes</p>
 
-                <a href="recipe-detail.html?id=${recipe.id}" class="primary">
+                <button
+                    class="primary"
+                    onclick="viewRecipe(${recipe.id})">
+
                     View Recipe
-                </a>
+
+                </button>
 
             </div>
 
@@ -112,33 +117,45 @@ function renderRecipes(data){
 }
 
 // ===============================
-// DATA AWAL
+// VIEW RECIPE
 // ===============================
 
-let currentRecipes = [...recipes];
+function viewRecipe(id) {
+
+    localStorage.setItem("detailRecipeId", id);
+
+    location.href = "recipe-detail.html";
+
+}
 
 // ===============================
-// FILTER DARI URL
+// FILTER FROM URL
 // ===============================
 
-const params = new URLSearchParams(window.location.search);
-const selectedCategory = params.get("category");
+function filterFromURL() {
 
-if(selectedCategory){
+    const params = new URLSearchParams(window.location.search);
+
+    const selectedCategory = params.get("category");
+
+    if (!selectedCategory) return;
 
     currentRecipes = recipes.filter(recipe =>
-        recipe.category.toLowerCase() === selectedCategory.toLowerCase()
+        recipe.category.toLowerCase() ===
+        selectedCategory.toLowerCase()
     );
 
-    // Aktifkan tombol sesuai kategori
-    filterButtons.forEach(button=>{
+    filterButtons.forEach(button => {
 
-        if(button.dataset.category &&
-           button.dataset.category.toLowerCase() === selectedCategory.toLowerCase()){
+        if (
+            button.dataset.category &&
+            button.dataset.category.toLowerCase() ===
+            selectedCategory.toLowerCase()
+        ) {
 
             button.classList.add("active");
 
-        }else{
+        } else {
 
             button.classList.remove("active");
 
@@ -148,19 +165,17 @@ if(selectedCategory){
 
 }
 
-renderRecipes(currentRecipes);
-
 // ===============================
 // SEARCH
 // ===============================
 
-if(searchInput){
+if (searchInput) {
 
-    searchInput.addEventListener("keyup",function(){
+    searchInput.addEventListener("keyup", function () {
 
         const keyword = this.value.toLowerCase();
 
-        const result = currentRecipes.filter(recipe=>
+        const result = currentRecipes.filter(recipe =>
 
             recipe.title.toLowerCase().includes(keyword)
 
@@ -176,21 +191,23 @@ if(searchInput){
 // FILTER BUTTON
 // ===============================
 
-filterButtons.forEach(button=>{
+filterButtons.forEach(button => {
 
-    button.addEventListener("click",function(){
+    button.addEventListener("click", function () {
 
-        filterButtons.forEach(btn=>btn.classList.remove("active"));
+        filterButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
 
         this.classList.add("active");
 
         const category = this.dataset.category;
 
-        if(category === "All"){
+        if (category === "All") {
 
             currentRecipes = [...recipes];
 
-        }else{
+        } else {
 
             currentRecipes = recipes.filter(recipe =>
                 recipe.category === category
@@ -198,7 +215,7 @@ filterButtons.forEach(button=>{
 
         }
 
-        if(searchInput){
+        if (searchInput) {
 
             searchInput.value = "";
 
@@ -209,3 +226,9 @@ filterButtons.forEach(button=>{
     });
 
 });
+
+// ===============================
+// START
+// ===============================
+
+loadRecipes();
