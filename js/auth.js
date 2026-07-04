@@ -1,6 +1,6 @@
 // ===============================
 // DAILY DELISH LOGIN
-// ===============================
+// ==============================
 
 const form = document.getElementById("loginForm");
 
