@@ -310,3 +310,25 @@ window.addEventListener("click", function (e) {
     }
 
 });
+
+// ===============================
+// MOBILE SIDEBAR
+// ===============================
+
+function toggleSidebar() {
+    document.querySelector(".sidebar").classList.toggle("show");
+    document.querySelector(".overlay").classList.toggle("show");
+}
+
+function closeSidebar() {
+    document.querySelector(".sidebar").classList.remove("show");
+    document.querySelector(".overlay").classList.remove("show");
+}
+
+document.querySelectorAll(".sidebar a").forEach(link => {
+    link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+            closeSidebar();
+        }
+    });
+});
