@@ -38,15 +38,11 @@ async function loadRecipe() {
 
     try {
 
-        alert("Recipe ID: " + recipeId);
+    const response = await fetch(`${API_URL}/recipes/${recipeId}`);
 
-        const response = await fetch(`${API_URL}/recipes/${recipeId}`);
+    const result = await response.json();
 
-        const result = await response.json();
-
-        alert(JSON.stringify(result));
-
-        if (!result.success) {
+    console.log(result); // opsional, untuk melihat hasil di Console
 
             alert(result.message);
 
