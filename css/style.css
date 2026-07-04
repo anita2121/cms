@@ -2609,3 +2609,128 @@ table{
     }
 
 }
+
+/* ===================================
+   PROFILE DROPDOWN
+=================================== */
+
+.profile-dropdown{
+    position:absolute;
+    top:60px;
+    right:0;
+    width:220px;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    overflow:hidden;
+    display:none;
+    z-index:9999;
+}
+
+.profile-dropdown.show{
+    display:block;
+}
+
+.profile-dropdown a{
+    display:block;
+    padding:15px 18px;
+    color:#333;
+    transition:.25s;
+}
+
+.profile-dropdown a:hover{
+    background:#f5f5f5;
+}
+
+
+/* ===================================
+   MOBILE DASHBOARD
+=================================== */
+
+.menu-btn,
+.overlay{
+    display:none;
+}
+
+@media (max-width:768px){
+
+.menu-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:fixed;
+    top:18px;
+    left:18px;
+    width:46px;
+    height:46px;
+    border-radius:12px;
+    background:#355C4D;
+    color:#fff;
+    font-size:22px;
+    z-index:1200;
+}
+
+.menu-btn.hide{
+    display:none;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    z-index:998;
+}
+
+.overlay.show{
+    display:block;
+}
+
+.sidebar{
+    display:block;
+    position:fixed;
+    left:-280px;
+    top:0;
+    width:260px;
+    height:100vh;
+    overflow-y:auto;
+    z-index:999;
+    transition:.35s;
+}
+
+.sidebar.show{
+    left:0;
+}
+
+.content{
+    width:100%;
+    padding:90px 18px 20px;
+}
+
+.topbar{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.topbar-right{
+    width:100%;
+    justify-content:flex-end;
+}
+
+.profile-btn img{
+    width:42px !important;
+    height:42px !important;
+    min-width:42px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.profile-dropdown{
+    position:static;
+    width:100%;
+    margin-top:12px;
+    box-shadow:none;
+    border:1px solid #eee;
+}
+
+}
