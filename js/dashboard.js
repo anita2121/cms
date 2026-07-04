@@ -22,9 +22,9 @@ const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 // ===============================
 // LOGOUT
 // ===============================
-document.getElementById("logout").addEventListener("click", (e) => {
+function doLogout(e) {
 
-    e.preventDefault();
+    if (e) e.preventDefault();
 
     if (!confirm("Yakin ingin logout?")) return;
 
@@ -33,7 +33,17 @@ document.getElementById("logout").addEventListener("click", (e) => {
 
     location.href = "login.html";
 
-});
+}
+
+document.getElementById("logout").addEventListener("click", doLogout);
+
+const mobileLogout = document.getElementById("mobileLogout");
+
+if (mobileLogout) {
+
+    mobileLogout.addEventListener("click", doLogout);
+
+}
 
 // ===============================
 // DATA
