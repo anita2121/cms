@@ -38,38 +38,46 @@ async function loadRecipe() {
 
     try {
 
-        console.log("Request:", `${API_URL}/recipes/${recipeId}`);
+        alert("Recipe ID: " + recipeId);
 
         const response = await fetch(`${API_URL}/recipes/${recipeId}`);
+
         const result = await response.json();
 
-        console.log(result);
+        alert(JSON.stringify(result));
 
         if (!result.success) {
+
             alert(result.message);
+
             location.href = "dashboard.html";
+
             return;
+
         }
 
         const recipe = result.data;
 
-        document.getElementById("title").value = recipe.title || "";
-        document.getElementById("category").value = recipe.category || "";
-        document.getElementById("time").value = recipe.time || "";
-        document.getElementById("description").value = recipe.description || "";
-        document.getElementById("ingredients").value = recipe.ingredients || "";
-        document.getElementById("steps").value = recipe.steps || "";
+        document.getElementById("title").value = recipe.title;
+        document.getElementById("category").value = recipe.category;
+        document.getElementById("time").value = recipe.time;
+        document.getElementById("description").value = recipe.description;
+        document.getElementById("ingredients").value = recipe.ingredients;
+        document.getElementById("steps").value = recipe.steps;
 
-        imageData = recipe.image || "";
-        preview.src = imageData || "assets/images/no-image.png";
+        imageData = recipe.image;
+
+        preview.src = recipe.image || "assets/images/no-image.png";
 
     } catch (err) {
+
         console.error(err);
+
         alert("Gagal mengambil data resep");
+
     }
 
 }
-
 loadRecipe();
 
 // CHANGE IMAGE
