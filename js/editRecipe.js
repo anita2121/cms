@@ -33,6 +33,7 @@ document.getElementById("logout").addEventListener("click", () => {
 // ===============================
 
 const recipeId = localStorage.getItem("editRecipeId");
+console.log("Recipe ID:", recipeId);
 
 if (!recipeId) {
 
