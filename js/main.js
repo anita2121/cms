@@ -166,3 +166,24 @@ function showAll() {
 // ==============================
 
 fetchRecipes();
+
+const newsletterForm = document.getElementById("newsletterForm");
+
+if (newsletterForm) {
+
+    newsletterForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const email = document
+            .getElementById("newsletterEmail")
+            .value
+            .trim();
+
+        localStorage.setItem("registerEmail", email);
+
+        location.href = "register.html";
+
+    });
+
+}
