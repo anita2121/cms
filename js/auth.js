@@ -64,6 +64,7 @@ localStorage.setItem("userEmail", result.user.email);
 
 });
 
+}
 // ===============================
 // NAVBAR & FOOTER AUTH
 // ===============================
