@@ -1,138 +1,157 @@
 // ===============================
-// DAILY DELISH LOGIN
-// ==============================
+// DAILY DELISH AUTH
+// LOGIN
+// ===============================
 
 const form = document.getElementById("loginForm");
 
 if (form) {
 
-form.addEventListener("submit", async function (e) {
+    form.addEventListener("submit", async function (e) {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
 
-    try {
+        try {
 
-        const response = await fetch("https://cms-api-workerr.widyazef28.workers.dev/login", {
+            const response = await fetch("https://cms-api-workerr.widyazef28.workers.dev/login", {
 
-            method: "POST",
+                method: "POST",
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-            body: JSON.stringify({
-                email,
-                password
-            })
+                body: JSON.stringify({
+                    email,
+                    password
+                })
 
-        });
+            });
 
-        const result = await response.json();
+            const result = await response.json();
 
-        if (!result.success) {
+            if (!result.success) {
 
-            alert(result.message);
+                alert(result.message);
+                return;
 
-            return;
+            }
+
+            // Simpan status login
+            localStorage.setItem("login", "true");
+
+            // Simpan data user
+            localStorage.setItem("currentUser", JSON.stringify(result.user));
+            localStorage.setItem("userId", result.user.id);
+            localStorage.setItem("userName", result.user.name);
+            localStorage.setItem("userEmail", result.user.email);
+
+            alert("Login berhasil!");
+
+            location.href = "dashboard.html";
+
+        } catch (err) {
+
+            console.error(err);
+            alert("Gagal login!");
 
         }
 
-        // Simpan status login
-localStorage.setItem("login", "true");
+    });
 
-// Simpan data user
-localStorage.setItem("currentUser", JSON.stringify(result.user));
-localStorage.setItem("userId", result.user.id);
-localStorage.setItem("userName", result.user.name);
-localStorage.setItem("userEmail", result.user.email);
+}
+// ===============================
+// NAVBAR LOGIN / LOGOUT
+// ===============================
 
-        alert("Login berhasil!");
+document.addEventListener("DOMContentLoaded", () => {
 
-        window.location.href = "dashboard.html";
+    const isLogin = localStorage.getItem("login") === "true";
 
-    } catch (err) {
+    const menu = document.querySelector(".menu");
 
-    console.error(err);
+    if (menu) {
 
-    alert(err.message);
+        if (isLogin) {
 
-    
+            menu.innerHTML = `
+
+                <a href="dashboard.html" class="login-btn">
+                    Dashboard
+                </a>
+
+                <a href="#" id="logoutBtn" class="register-btn">
+                    Logout
+                </a>
+
+            `;
+
+        } else {
+
+            menu.innerHTML = `
+
+                <a href="login.html" class="login-btn">
+                    Login
+                </a>
+
+                <a href="register.html" class="register-btn">
+                    Register
+                </a>
+
+            `;
+
+        }
+
+    }
+
+    // ===============================
+    // FOOTER ACCOUNT
+    // ===============================
+
+    const accountSection = document.querySelector(".footer div:last-child");
+
+    if (accountSection) {
+
+        if (isLogin) {
+
+            accountSection.innerHTML = `
+
+                <h4>Account</h4>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="#" id="footerLogout">
+                    Logout
+                </a>
+
+            `;
+
+        } else {
+
+            accountSection.innerHTML = `
+
+                <h4>Account</h4>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+            `;
+
+        }
+
     }
 
 });
-
-}
-// ===============================
-// NAVBAR & FOOTER AUTH
-// ===============================
-
-const isLogin = localStorage.getItem("login") === "true";
-
-const menu = document.getElementById("menu");
-const footerAccount = document.getElementById("footer-account");
-
-if (menu) {
-
-    if (isLogin) {
-
-        menu.innerHTML = `
-            <a href="dashboard.html" class="login-btn">
-                Dashboard
-            </a>
-
-            <a href="#" class="register-btn" id="logoutBtn">
-                Logout
-            </a>
-        `;
-
-    } else {
-
-        menu.innerHTML = `
-            <a href="login.html" class="login-btn">
-                Login
-            </a>
-
-            <a href="register.html" class="register-btn">
-                Register
-            </a>
-        `;
-
-    }
-
-}
-
-if (footerAccount) {
-
-    if (isLogin) {
-
-        footerAccount.innerHTML = `
-            <a href="dashboard.html">
-                Dashboard
-            </a>
-
-            <a href="#" id="footerLogout">
-                Logout
-            </a>
-        `;
-
-    } else {
-
-        footerAccount.innerHTML = `
-            <a href="login.html">
-                Login
-            </a>
-
-            <a href="register.html">
-                Register
-            </a>
-        `;
-
-    }
-
-}
 
 // ===============================
 // LOGOUT
@@ -147,13 +166,17 @@ document.addEventListener("click", function (e) {
 
         e.preventDefault();
 
-        if (!confirm("Yakin ingin logout?")) return;
+        const confirmLogout = confirm("Yakin ingin logout?");
+
+        if (!confirmLogout) return;
 
         localStorage.removeItem("login");
         localStorage.removeItem("currentUser");
         localStorage.removeItem("userId");
         localStorage.removeItem("userName");
         localStorage.removeItem("userEmail");
+        localStorage.removeItem("editRecipeId");
+        localStorage.removeItem("detailRecipeId");
 
         alert("Logout berhasil!");
 
@@ -162,3 +185,19 @@ document.addEventListener("click", function (e) {
     }
 
 });
+
+// ===============================
+// LOGIN STATUS
+// ===============================
+
+function isLogin() {
+    return localStorage.getItem("login") === "true";
+}
+
+function getCurrentUser() {
+
+    const user = localStorage.getItem("currentUser");
+
+    return user ? JSON.parse(user) : null;
+
+}
