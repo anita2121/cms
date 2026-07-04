@@ -2850,3 +2850,36 @@ table{
     color:#777;
 
 }
+
+
+.recipe-image{
+    position:relative;
+}
+
+.favorite{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:42px;
+    height:42px;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.category-badge{
+    position:absolute;
+    left:15px;
+    bottom:15px;
+    background:#355C4D;
+    color:#fff;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
