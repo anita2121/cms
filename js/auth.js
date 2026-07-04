@@ -39,13 +39,13 @@ form.addEventListener("submit", async function (e) {
         }
 
         // Simpan status login
-        localStorage.setItem("login", "true");
+localStorage.setItem("login", "true");
 
-        // Simpan data user
-        localStorage.setItem(
-            "currentUser",
-            JSON.stringify(result.user)
-        );
+// Simpan data user
+localStorage.setItem("currentUser", JSON.stringify(result.user));
+localStorage.setItem("userId", result.user.id);
+localStorage.setItem("userName", result.user.name);
+localStorage.setItem("userEmail", result.user.email);
 
         alert("Login berhasil!");
 
