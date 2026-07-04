@@ -1,6 +1,6 @@
 // ===============================
 // DAILY DELISH - EDIT RECIPE
-// ==============================
+// ===============================
 
 // LOGIN CHECK
 if (localStorage.getItem("login") !== "true") {
@@ -13,13 +13,12 @@ const API_URL = "https://cms-api-workerr.widyazef28.workers.dev";
 // LOGOUT
 document.getElementById("logout").addEventListener("click", () => {
     localStorage.removeItem("login");
+    localStorage.removeItem("currentUser");
     location.href = "login.html";
 });
 
 // GET RECIPE ID
 const recipeId = localStorage.getItem("editRecipeId");
-
-console.log("Recipe ID:", recipeId);
 
 if (!recipeId) {
     alert("Resep tidak ditemukan!");
@@ -33,22 +32,20 @@ const imageInput = document.getElementById("image");
 
 let imageData = "";
 
+// ===============================
 // LOAD RECIPE
+// ===============================
 async function loadRecipe() {
 
     try {
 
-    alert("Recipe ID: " + recipeId);
+        const response = await fetch(`${API_URL}/recipes/${recipeId}`);
+        const result = await response.json();
 
-    const response = await fetch(`${API_URL}/recipes/${recipeId}`);
+        if (!result.success) {
 
-    const result = await response.json();
-
-    alert(JSON.stringify(result));
             alert(result.message);
-
             location.href = "dashboard.html";
-
             return;
 
         }
@@ -63,21 +60,22 @@ async function loadRecipe() {
         document.getElementById("steps").value = recipe.steps;
 
         imageData = recipe.image;
-
         preview.src = recipe.image || "assets/images/no-image.png";
 
     } catch (err) {
 
         console.error(err);
-
-        alert("Gagal mengambil data resep");
+        alert("Gagal mengambil data resep.");
 
     }
 
 }
+
 loadRecipe();
 
+// ===============================
 // CHANGE IMAGE
+// ===============================
 imageInput.addEventListener("change", function () {
 
     const file = this.files[0];
@@ -87,20 +85,25 @@ imageInput.addEventListener("change", function () {
     const reader = new FileReader();
 
     reader.onload = function (e) {
+
         imageData = e.target.result;
         preview.src = imageData;
+
     };
 
     reader.readAsDataURL(file);
 
 });
 
-// UPDATE
+// ===============================
+// UPDATE RECIPE
+// ===============================
 form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
     const data = {
+
         title: document.getElementById("title").value.trim(),
         category: document.getElementById("category").value,
         time: document.getElementById("time").value,
@@ -108,31 +111,42 @@ form.addEventListener("submit", async function (e) {
         description: document.getElementById("description").value.trim(),
         ingredients: document.getElementById("ingredients").value.trim(),
         steps: document.getElementById("steps").value.trim()
+
     };
 
     try {
 
         const response = await fetch(`${API_URL}/recipes/${recipeId}`, {
+
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data)
+
         });
 
         const result = await response.json();
 
         if (result.success) {
+
             alert("Resep berhasil diperbarui!");
+
             localStorage.removeItem("editRecipeId");
+
             location.href = "dashboard.html";
+
         } else {
+
             alert(result.message);
+
         }
 
     } catch (err) {
+
         console.error(err);
-        alert("Gagal memperbarui resep");
+        alert("Gagal memperbarui resep.");
+
     }
 
 });
