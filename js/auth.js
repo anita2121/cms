@@ -53,10 +53,11 @@ form.addEventListener("submit", async function (e) {
 
     } catch (err) {
 
-        alert("Tidak dapat terhubung ke server!");
+    console.error(err);
 
-        console.error(err);
+    alert(err.message);
 
+    
     }
 
 });
