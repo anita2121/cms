@@ -1,6 +1,6 @@
 // ===============================
 // DAILY DELISH - RECIPE DETAIL
-// ===============================
+// ==============================
 
 // Login Check
 if (localStorage.getItem("login") !== "true") {
