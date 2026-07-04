@@ -1,29 +1,85 @@
-// Ambil ID
+// ===============================
+// DAILY DELISH - RECIPE DETAIL
+// ===============================
 
-const recipeId = Number(localStorage.getItem("detailRecipeId"));
+// Login Check
+if (localStorage.getItem("login") !== "true") {
+    location.href = "login.html";
+}
 
-const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+// ===============================
+// API
+// ===============================
 
-const recipe = recipes.find(r => r.id === recipeId);
+const API_URL = "https://cms-api-workerrr.widyazef28.workers.dev";
 
-if(!recipe){
+// ===============================
+// GET RECIPE ID
+// ===============================
 
-alert("Resep tidak ditemukan.");
+const recipeId = localStorage.getItem("detailRecipeId");
 
-location.href="index.html";
+if (!recipeId) {
+
+    alert("Resep tidak ditemukan.");
+
+    location.href = "dashboard.html";
 
 }
 
-document.getElementById("detailImage").src = recipe.image;
+// ===============================
+// LOAD RECIPE
+// ===============================
 
-document.getElementById("detailTitle").innerText = recipe.title;
+async function loadRecipe() {
 
-document.getElementById("detailCategory").innerText = recipe.category;
+    try {
 
-document.getElementById("detailTime").innerHTML = "⏱ "+recipe.time;
+        const response = await fetch(`${API_URL}/recipes/${recipeId}`);
 
-document.getElementById("detailDescription").innerText = recipe.description;
+        const result = await response.json();
 
-document.getElementById("detailIngredients").innerText = recipe.ingredients;
+        if (!result.success) {
 
-document.getElementById("detailSteps").innerText = recipe.steps;
+            alert(result.message);
+
+            location.href = "dashboard.html";
+
+            return;
+
+        }
+
+        const recipe = result.data;
+
+        document.getElementById("detailImage").src =
+            recipe.image || "assets/images/no-image.png";
+
+        document.getElementById("detailTitle").innerText =
+            recipe.title;
+
+        document.getElementById("detailCategory").innerText =
+            recipe.category;
+
+        document.getElementById("detailTime").innerHTML =
+            "⏱ " + recipe.time;
+
+        document.getElementById("detailDescription").innerText =
+            recipe.description;
+
+        document.getElementById("detailIngredients").innerText =
+            recipe.ingredients;
+
+        document.getElementById("detailSteps").innerText =
+            recipe.steps;
+
+    } catch (err) {
+
+        console.error(err);
+
+        alert("Tidak dapat mengambil data resep.");
+
+    }
+
+}
+
+loadRecipe();
