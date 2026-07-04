@@ -12,7 +12,7 @@ if (localStorage.getItem("login") !== "true") {
 // ===============================
 // API
 // ===============================
-const API_URL = "https://cms-api-worker.widyazef28.workers.dev";
+const API_URL = "https://cms-api-workerr.widyazef28.workers.dev";
 
 // ===============================
 // LOGOUT
