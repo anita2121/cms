@@ -13,13 +13,18 @@ if (localStorage.getItem("login") !== "true") {
 // API
 // ===============================
 const API_URL = "https://cms-api-workerr.widyazef28.workers.dev";
-
 // ===============================
 // LOGOUT
 // ===============================
-document.getElementById("logout").addEventListener("click", () => {
+document.getElementById("logout").addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    if (!confirm("Yakin ingin logout?")) return;
 
     localStorage.removeItem("login");
+    localStorage.removeItem("currentUser");
+
     location.href = "login.html";
 
 });
@@ -252,5 +257,27 @@ function updateStats() {
         recipes.length > 0
             ? Math.round(total / recipes.length) + " Min"
             : "0 Min";
+
+}
+
+// ===============================
+// PROFILE
+// ===============================
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (currentUser) {
+
+    document.getElementById("welcomeText").innerHTML =
+        `Welcome Back, ${currentUser.name} 👋`;
+
+    document.getElementById("profileName").textContent =
+        currentUser.name;
+
+    if (currentUser.photo) {
+
+        document.getElementById("profileAvatar").src =
+            currentUser.photo;
+
+    }
 
 }
