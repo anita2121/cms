@@ -1932,3 +1932,188 @@ padding:30px;
 }
 
 }
+
+/* ===============================
+   DASHBOARD TOPBAR
+=============================== */
+
+.topbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+margin-bottom:30px;
+
+}
+
+.topbar-right{
+
+display:flex;
+align-items:center;
+gap:18px;
+
+}
+
+/* ===============================
+   PROFILE
+=============================== */
+
+.profile-menu{
+
+position:relative;
+
+}
+
+.profile-btn{
+
+display:flex;
+align-items:center;
+gap:10px;
+cursor:pointer;
+padding:8px 14px;
+background:#fff;
+border-radius:50px;
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+transition:.3s;
+
+}
+
+.profile-btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+.profile-btn img{
+
+width:42px;
+height:42px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #ff7a00;
+
+}
+
+.profile-btn span{
+
+font-weight:600;
+
+}
+
+/* ===============================
+   DROPDOWN
+=============================== */
+
+.profile-dropdown{
+
+position:absolute;
+top:60px;
+right:0;
+width:220px;
+background:#fff;
+border-radius:14px;
+box-shadow:0 12px 35px rgba(0,0,0,.12);
+overflow:hidden;
+
+display:none;
+z-index:999;
+
+}
+
+.profile-dropdown.show{
+
+display:block;
+
+}
+
+.profile-dropdown a{
+
+display:block;
+padding:14px 18px;
+text-decoration:none;
+color:#333;
+transition:.25s;
+
+}
+
+.profile-dropdown a:hover{
+
+background:#fff4ec;
+color:#ff7a00;
+
+}
+
+/* ===============================
+   TABLE
+=============================== */
+
+.table-box{
+
+background:#fff;
+border-radius:18px;
+padding:20px;
+box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+}
+
+.table-box table{
+
+width:100%;
+border-collapse:collapse;
+
+}
+
+.table-box th{
+
+background:#fff7f2;
+padding:15px;
+text-align:left;
+
+}
+
+.table-box td{
+
+padding:14px;
+border-bottom:1px solid #eee;
+
+}
+
+.table-box img{
+
+width:70px;
+height:70px;
+border-radius:12px;
+object-fit:cover;
+
+}
+
+/* ===============================
+   ACTION BUTTON
+=============================== */
+
+.edit,
+.delete,
+.primary{
+
+border:none;
+border-radius:8px;
+padding:8px 14px;
+cursor:pointer;
+margin:2px;
+
+}
+
+.edit{
+
+background:#ffc107;
+color:#222;
+
+}
+
+.delete{
+
+background:#e53935;
+color:#fff;
+
+}
