@@ -11,6 +11,12 @@ if (localStorage.getItem("login") !== "true") {
 }
 
 // ===============================
+// API
+// ===============================
+
+const API_URL = "https://cms-api-workerrr.widyazef28.workers.dev";
+
+// ===============================
 // LOGOUT
 // ===============================
 
@@ -26,9 +32,45 @@ document.getElementById("logout").addEventListener("click", () => {
 // DATA
 // ===============================
 
-let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+let recipes = [];
 
 const table = document.getElementById("recipeTable");
+
+// ===============================
+// LOAD RECIPES
+// ===============================
+
+async function loadRecipes() {
+
+    try {
+
+        const response = await fetch(`${API_URL}/recipes`);
+
+        const result = await response.json();
+
+        if (result.success) {
+
+            recipes = result.data;
+
+            renderTable();
+
+            updateStats();
+
+        } else {
+
+            alert(result.message);
+
+        }
+
+    } catch (err) {
+
+        console.error(err);
+
+        alert("Gagal mengambil data resep");
+
+    }
+
+}
 
 // ===============================
 // RENDER TABLE
@@ -55,33 +97,24 @@ function renderTable(data = recipes) {
     data.forEach(recipe => {
 
         table.innerHTML += `
-
         <tr>
 
             <td>
-
                 <img
                     src="${recipe.image || 'assets/images/no-image.png'}"
                     alt="${recipe.title}">
-
             </td>
 
             <td>
-
                 <strong>${recipe.title}</strong>
-
             </td>
 
             <td>
-
                 ${recipe.category}
-
             </td>
 
             <td>
-
                 ${recipe.time}
-
             </td>
 
             <td>
@@ -113,14 +146,11 @@ function renderTable(data = recipes) {
             </td>
 
         </tr>
-
         `;
 
     });
 
 }
-
-renderTable();
 
 // ===============================
 // VIEW
@@ -150,17 +180,39 @@ function editRecipe(id){
 // DELETE
 // ===============================
 
-function deleteRecipe(id){
+async function deleteRecipe(id){
 
     if(!confirm("Yakin ingin menghapus resep ini?")) return;
 
-    recipes = recipes.filter(recipe => recipe.id !== id);
+    try {
 
-    localStorage.setItem("recipes", JSON.stringify(recipes));
+        const response = await fetch(`${API_URL}/recipes/${id}`, {
 
-    renderTable();
+            method: "DELETE"
 
-    updateStats();
+        });
+
+        const result = await response.json();
+
+        if(result.success){
+
+            alert("Resep berhasil dihapus");
+
+            loadRecipes();
+
+        }else{
+
+            alert(result.message);
+
+        }
+
+    } catch(err){
+
+        console.error(err);
+
+        alert("Gagal menghapus resep");
+
+    }
 
 }
 
@@ -200,4 +252,8 @@ function updateStats(){
 
 }
 
-updateStats();
+// ===============================
+// START
+// ===============================
+
+loadRecipes();
