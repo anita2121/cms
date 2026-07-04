@@ -2883,3 +2883,13 @@ table{
     font-size:13px;
     font-weight:600;
 }
+
+@media (max-width: 768px) {
+
+    .category-badge {
+        position: static;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+}
