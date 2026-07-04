@@ -316,19 +316,35 @@ window.addEventListener("click", function (e) {
 // ===============================
 
 function toggleSidebar() {
-    document.querySelector(".sidebar").classList.toggle("show");
-    document.querySelector(".overlay").classList.toggle("show");
+
+    document.querySelector(".sidebar").classList.add("show");
+    document.querySelector(".overlay").classList.add("show");
+
+    if (window.innerWidth <= 768) {
+        document.querySelector(".menu-btn").style.display = "none";
+    }
+
 }
 
 function closeSidebar() {
+
     document.querySelector(".sidebar").classList.remove("show");
     document.querySelector(".overlay").classList.remove("show");
+
+    if (window.innerWidth <= 768) {
+        document.querySelector(".menu-btn").style.display = "flex";
+    }
+
 }
 
-document.querySelectorAll(".sidebar a").forEach(link => {
-    link.addEventListener("click", () => {
+document.querySelectorAll(".sidebar li").forEach(item => {
+
+    item.addEventListener("click", () => {
+
         if (window.innerWidth <= 768) {
             closeSidebar();
         }
+
     });
+
 });
