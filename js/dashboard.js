@@ -305,3 +305,11 @@ window.addEventListener("click", function (e) {
     }
 
 });
+
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+console.log(currentUser);
+
+const response = await fetch(
+    `${API_URL}/recipes?user_id=${currentUser.id}`
+);
