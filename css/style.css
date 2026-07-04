@@ -2734,3 +2734,27 @@ table{
 }
 
 }
+
+@media (max-width:768px){
+
+.profile-btn{
+    display:flex !important;
+    align-items:center;
+    gap:10px;
+}
+
+.profile-btn img{
+    display:block !important;
+    width:40px !important;
+    height:40px !important;
+    min-width:40px;
+    min-height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.profile-btn span{
+    display:none;
+}
+
+}
