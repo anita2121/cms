@@ -2501,3 +2501,11 @@ table{
 }
 
 }
+
+@media (max-width:768px){
+
+.sidebar{
+    display:block !important;
+}
+
+}
