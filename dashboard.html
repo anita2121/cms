@@ -245,52 +245,6 @@
 
 <script src="js/dashboard.js"></script>
 
-<script>
-
-function toggleProfileMenu() {
-
-    const menu = document.getElementById("profileDropdown");
-
-    menu.classList.toggle("show");
-
-}
-
-window.addEventListener("click", function(e) {
-
-    if (!e.target.closest(".profile-menu")) {
-
-        const menu = document.getElementById("profileDropdown");
-
-        if (menu) {
-
-            menu.classList.remove("show");
-
-        }
-
-    }
-
-});
-
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-if (currentUser) {
-
-    const name = currentUser.name || currentUser.username || "User";
-
-    document.getElementById("welcomeText").innerHTML =
-        `Welcome Back, ${name} 👋`;
-
-    document.getElementById("profileName").textContent = name;
-
-    if (currentUser.photo) {
-
-        document.getElementById("profileAvatar").src = currentUser.photo;
-
-    }
-
-}
-
-</script>
 
 </body>
 
