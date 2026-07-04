@@ -68,18 +68,15 @@ function displayRecipes(data) {
                     <span class="rating">⭐ ${recipe.rating || "5.0"}</span>
                 </div>
 
-                <div class="author">
-                    <div class="author-left">
-                        <img src="${recipe.avatar || "https://i.pravatar.cc/150"}">
-                        <div>
-                            <h4>${recipe.author || "Daily Delish User"}</h4>
-                            <small>Recipe Creator</small>
-                        </div>
-                    </div>
+                <button
+    class="primary"
+    style="width:100%; margin-top:20px;"
+    onclick="viewRecipe(${recipe.id})">
 
-                    <button class="primary" onclick="viewRecipe(${recipe.id})">
-                        View
-                    </button>
+    View
+
+</button>
+
 
                 </div>
 
