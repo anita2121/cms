@@ -43,27 +43,21 @@
 
             </li>
 
-            <li onclick="location.href='index.html'">
+            <li onclick="location.href='recipes.html'">
 
-                🍲 View Website
+                📖 Recipes
 
             </li>
 
-            <li>
+            <li onclick="location.href='categories.html'">
 
                 📂 Categories
 
             </li>
 
-            <li>
+            <li onclick="location.href='index.html'">
 
-                👤 Profile
-
-            </li>
-
-            <li id="logout">
-
-                🚪 Logout
+                🌐 View Website
 
             </li>
 
@@ -75,40 +69,107 @@
 
     <main class="content">
 
-        <!-- TOPBAR -->
+        <!-- ================= TOPBAR ================= -->
 
         <div class="topbar">
 
             <div>
 
-                <h1>Welcome Back 👋</h1>
+                <h1 id="welcomeText">
 
-                <p>Kelola semua resep makananmu di sini.</p>
+                    Welcome Back 👋
+
+                </h1>
+
+                <p>
+
+                    Kelola semua resep makananmu di sini.
+
+                </p>
 
             </div>
 
-            <button
-                class="primary"
-                onclick="location.href='add-recipe.html'">
+            <div class="topbar-right">
 
-                + Add Recipe
+                <button
+                    class="primary"
+                    onclick="location.href='add-recipe.html'">
 
-            </button>
+                    + Add Recipe
+
+                </button>
+
+                <div class="profile-menu">
+
+                    <div
+                        class="profile-btn"
+                        onclick="toggleProfileMenu()">
+
+                        <img
+                            id="profileAvatar"
+                            src="assets/images/default-avatar.png"
+                            alt="Profile">
+
+                        <span id="profileName">
+
+                            User
+
+                        </span>
+
+                        ▼
+
+                    </div>
+
+                    <div
+                        id="profileDropdown"
+                        class="profile-dropdown">
+
+                        <a href="profile.html">
+
+                            👤 Edit Profile
+
+                        </a>
+
+                        <a href="index.html">
+
+                            🏠 Home
+
+                        </a>
+
+                        <a href="recipes.html">
+
+                            📖 Recipes
+
+                        </a>
+
+                        <a
+                            href="#"
+                            id="logout">
+
+                            🚪 Logout
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <!-- SEARCH -->
+        <!-- ================= SEARCH ================= -->
 
         <div class="dashboard-search">
 
             <input
                 type="text"
-                placeholder="Cari resep..."
+                placeholder="🔍 Cari resep..."
                 onkeyup="searchRecipe(this.value)">
 
         </div>
 
-        <!-- STATS -->
+        <!-- ================= STATS ================= -->
 
         <section class="stats">
 
@@ -124,7 +185,7 @@
 
                 <h3>0</h3>
 
-                <p>Published</p>
+                <p>Total Categories</p>
 
             </div>
 
@@ -132,13 +193,13 @@
 
                 <h3>0</h3>
 
-                <p>Draft</p>
+                <p>Average Time</p>
 
             </div>
 
         </section>
 
-        <!-- TABLE -->
+        <!-- ================= TABLE ================= -->
 
         <section class="table-box">
 
@@ -170,6 +231,8 @@
 
                 <tbody id="recipeTable">
 
+                                    <!-- Data dari dashboard.js -->
+
                 </tbody>
 
             </table>
@@ -181,6 +244,53 @@
 </div>
 
 <script src="js/dashboard.js"></script>
+
+<script>
+
+function toggleProfileMenu() {
+
+    const menu = document.getElementById("profileDropdown");
+
+    menu.classList.toggle("show");
+
+}
+
+window.addEventListener("click", function(e) {
+
+    if (!e.target.closest(".profile-menu")) {
+
+        const menu = document.getElementById("profileDropdown");
+
+        if (menu) {
+
+            menu.classList.remove("show");
+
+        }
+
+    }
+
+});
+
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (currentUser) {
+
+    const name = currentUser.name || currentUser.username || "User";
+
+    document.getElementById("welcomeText").innerHTML =
+        `Welcome Back, ${name} 👋`;
+
+    document.getElementById("profileName").textContent = name;
+
+    if (currentUser.photo) {
+
+        document.getElementById("profileAvatar").src = currentUser.photo;
+
+    }
+
+}
+
+</script>
 
 </body>
 
