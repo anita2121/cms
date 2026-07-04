@@ -2119,43 +2119,71 @@ color:#fff;
 }
 
 /* ===================================
-        MOBILE IMPROVEMENT V3
+        MOBILE IMPROVEMENT V4
 =================================== */
 
 @media (max-width:768px){
 
-/* Navbar */
+/* ==========================
+        HEADER
+========================== */
 
 header{
-    height:auto;
-    padding:15px 0;
+    height:70px;
+    padding:0;
 }
 
 .navbar{
-    flex-direction:column;
-    gap:15px;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
+    font-size:22px;
+}
+
+/* ==========================
+      HAMBURGER
+========================== */
+
+.menu-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:45px;
+    height:45px;
+    border:none;
+    background:#355C4D;
+    color:#fff;
     font-size:24px;
+    border-radius:12px;
+    cursor:pointer;
 }
 
-nav{
-    width:100%;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
+/* sembunyikan menu desktop */
 
+nav,
 .menu{
-    width:100%;
-    justify-content:center;
+    display:none;
 }
 
-/* Hero */
+/* ==========================
+        HERO
+========================== */
 
 .hero{
-    padding-top:180px;
+    padding-top:120px;
+}
+
+.hero-container{
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.hero-left{
+    text-align:center;
 }
 
 .hero-left h1{
@@ -2169,6 +2197,7 @@ nav{
 
 .hero-button{
     flex-direction:column;
+    gap:15px;
 }
 
 .primary,
@@ -2176,22 +2205,23 @@ nav{
     width:100%;
 }
 
-/* Recipe */
-
-.recipe-list{
-    grid-template-columns:1fr;
-}
-
-/* Category */
-
-.category-grid{
-    grid-template-columns:repeat(2,1fr);
-}
-
-/* Section */
+/* ==========================
+      SECTION
+========================== */
 
 section{
     padding:60px 0;
+}
+
+.title,
+.title-center{
+    text-align:center;
+}
+
+.title{
+    flex-direction:column;
+    gap:15px;
+    align-items:center;
 }
 
 .title h2,
@@ -2199,18 +2229,45 @@ section{
     font-size:30px;
 }
 
-/* Dashboard */
+/* ==========================
+      RECIPE
+========================== */
+
+.recipe-list{
+    grid-template-columns:1fr;
+}
+
+/* ==========================
+      CATEGORY
+========================== */
+
+.category-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+/* ==========================
+      DASHBOARD
+========================== */
+
+.dashboard{
+    grid-template-columns:1fr;
+}
+
+.sidebar{
+    display:none;
+}
 
 .content{
-    padding:15px;
+    padding:18px;
+}
+
+.topbar{
+    flex-direction:column;
+    align-items:flex-start;
 }
 
 .stats{
     grid-template-columns:1fr;
-}
-
-.stat-card{
-    padding:22px;
 }
 
 .table-box{
@@ -2221,10 +2278,28 @@ table{
     min-width:700px;
 }
 
-/* Detail */
+/* ==========================
+      LOGIN
+========================== */
+
+.login-wrapper{
+    grid-template-columns:1fr;
+}
+
+.login-image{
+    display:none;
+}
+
+.login-card{
+    padding:35px 25px;
+}
+
+/* ==========================
+      DETAIL
+========================== */
 
 .recipe-detail{
-    padding-top:140px;
+    padding-top:120px;
 }
 
 .recipe-detail .container{
@@ -2235,23 +2310,9 @@ table{
     font-size:30px;
 }
 
-/* Contact */
-
-.contact-card{
-    padding:25px;
-}
-
-/* Login */
-
-.login-card{
-    padding:35px 25px;
-}
-
-.login-logo h2{
-    font-size:28px;
-}
-
-/* Footer */
+/* ==========================
+      FOOTER
+========================== */
 
 .footer{
     grid-template-columns:1fr;
@@ -2260,7 +2321,9 @@ table{
 
 }
 
-/* HP kecil */
+/* ==========================
+      HP KECIL
+========================== */
 
 @media (max-width:480px){
 
@@ -2269,6 +2332,12 @@ table{
 }
 
 .logo{
+    font-size:20px;
+}
+
+.menu-btn{
+    width:40px;
+    height:40px;
     font-size:22px;
 }
 
@@ -2277,29 +2346,35 @@ table{
     line-height:38px;
 }
 
+.catalog-hero{
+    padding-top:120px;
+}
+
 .catalog-hero h1{
-    font-size:30px;
-}
-
-.tag{
-    font-size:14px;
-}
-
-.recipe-card img{
-    height:200px;
+    font-size:28px;
 }
 
 .category-grid{
     grid-template-columns:1fr;
 }
 
+.recipe-card img{
+    height:200px;
+}
+
 .newsletter-box{
     padding:25px;
 }
 
-.detail-info{
+.newsletter-box form{
     flex-direction:column;
-    align-items:flex-start;
+}
+
+.newsletter-box input,
+.newsletter-box button{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:10px;
 }
 
 .profile-btn span{
