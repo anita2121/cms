@@ -1,4 +1,4 @@
-const API_URL = "https://cms-api-worker.xxx.workers.dev";
+const API_URL = "https://cms-api-workerr.widyazef28.workers.dev";
 
 // ==============================
 // ELEMENT
@@ -14,7 +14,7 @@ async function fetchRecipes() {
 
     try {
 
-        const response = await fetch(${API_URL}/recipes);
+        const response = await fetch(`${API_URL}/recipes`);
         const data = await response.json();
 
         displayRecipes(data);
