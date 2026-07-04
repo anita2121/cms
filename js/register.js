@@ -43,3 +43,12 @@ form.addEventListener("submit", async (e) => {
     }
 
 });
+const savedEmail = localStorage.getItem("registerEmail");
+
+if (savedEmail) {
+
+    document.getElementById("email").value = savedEmail;
+
+    localStorage.removeItem("registerEmail");
+
+}
