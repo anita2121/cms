@@ -96,13 +96,26 @@
 
             </p>
 
-            <button
-                class="primary"
-                onclick="location.href='recipes.html'">
+            <div class="hero-button">
 
-                Explore Recipes
+    <button
+        class="primary"
+        onclick="location.href='recipes.html'">
 
-            </button>
+        Explore Recipes
+
+    </button>
+
+    <button
+        class="secondary"
+        onclick="openCredits()">
+
+        🎬 Credits
+
+    </button>
+
+            </div>
+
 
         </div>
 
@@ -215,6 +228,68 @@
     </div>
 
 </footer>
+    <div id="creditModal" class="credit-modal">
+
+    <div class="credit-card">
+
+        <span class="close-credit" onclick="closeCredits()">✕</span>
+
+        <h2>🍽️ Daily Delish</h2>
+
+        <p class="credit-subtitle">
+            Developed By
+        </p>
+
+        <div class="credit-item">
+            <h3>Nama Anggota 1</h3>
+            <p>NIM : 2310XXXXX</p>
+        </div>
+
+        <div class="credit-item">
+            <h3>Nama Anggota 2</h3>
+            <p>NIM : 2310XXXXX</p>
+        </div>
+
+        <div class="credit-item">
+            <h3>Nama Anggota 3</h3>
+            <p>NIM : 2310XXXXX</p>
+        </div>
+
+        <div class="credit-item">
+            <h3>Nama Anggota 4</h3>
+            <p>NIM : 2310XXXXX</p>
+        </div>
+
+    </div>
+
+    </div>
+    <script>
+
+function openCredits(){
+
+    document.getElementById("creditModal").classList.add("show");
+
+}
+
+function closeCredits(){
+
+    document.getElementById("creditModal").classList.remove("show");
+
+}
+
+window.onclick = function(e){
+
+    const modal = document.getElementById("creditModal");
+
+    if(e.target === modal){
+
+        closeCredits();
+
+    }
+
+}
+
+    </script>
     <script src="js/auth.js"></script>
 
 </body>
