@@ -5,7 +5,6 @@
 // ===============================
 // LOGIN CHECK
 // ===============================
-
 if (localStorage.getItem("login") !== "true") {
     location.href = "login.html";
 }
@@ -13,17 +12,14 @@ if (localStorage.getItem("login") !== "true") {
 // ===============================
 // API
 // ===============================
-
-const API_URL = "https://cms-api-workerr.widyazef28.workers.dev";
+const API_URL = "https://cms-api-worker.widyazef28.workers.dev";
 
 // ===============================
 // LOGOUT
 // ===============================
-
 document.getElementById("logout").addEventListener("click", () => {
 
     localStorage.removeItem("login");
-
     location.href = "login.html";
 
 });
@@ -31,7 +27,6 @@ document.getElementById("logout").addEventListener("click", () => {
 // ===============================
 // DATA
 // ===============================
-
 let recipes = [];
 
 const table = document.getElementById("recipeTable");
@@ -39,13 +34,11 @@ const table = document.getElementById("recipeTable");
 // ===============================
 // LOAD RECIPES
 // ===============================
-
 async function loadRecipes() {
 
     try {
 
         const response = await fetch(`${API_URL}/recipes`);
-
         const result = await response.json();
 
         if (result.success) {
@@ -65,17 +58,17 @@ async function loadRecipes() {
     } catch (err) {
 
         console.error(err);
-
-        alert("Gagal mengambil data resep");
+        alert("Gagal mengambil data resep.");
 
     }
 
 }
 
+loadRecipes();
+
 // ===============================
 // RENDER TABLE
 // ===============================
-
 function renderTable(data = recipes) {
 
     table.innerHTML = "";
@@ -109,13 +102,9 @@ function renderTable(data = recipes) {
                 <strong>${recipe.title}</strong>
             </td>
 
-            <td>
-                ${recipe.category}
-            </td>
+            <td>${recipe.category}</td>
 
-            <td>
-                ${recipe.time}
-            </td>
+            <td>${recipe.time}</td>
 
             <td>
 
@@ -155,8 +144,7 @@ function renderTable(data = recipes) {
 // ===============================
 // VIEW
 // ===============================
-
-function viewRecipe(id){
+function viewRecipe(id) {
 
     localStorage.setItem("detailRecipeId", id);
 
@@ -167,8 +155,7 @@ function viewRecipe(id){
 // ===============================
 // EDIT
 // ===============================
-
-function editRecipe(id){
+function editRecipe(id) {
 
     localStorage.setItem("editRecipeId", id);
 
@@ -179,10 +166,9 @@ function editRecipe(id){
 // ===============================
 // DELETE
 // ===============================
+async function deleteRecipe(id) {
 
-async function deleteRecipe(id){
-
-    if(!confirm("Yakin ingin menghapus resep ini?")) return;
+    if (!confirm("Yakin ingin menghapus resep ini?")) return;
 
     try {
 
@@ -194,23 +180,23 @@ async function deleteRecipe(id){
 
         const result = await response.json();
 
-        if(result.success){
+        if (result.success) {
 
-            alert("Resep berhasil dihapus");
+            alert("Resep berhasil dihapus.");
 
             loadRecipes();
 
-        }else{
+        } else {
 
             alert(result.message);
 
         }
 
-    } catch(err){
+    } catch (err) {
 
         console.error(err);
 
-        alert("Gagal menghapus resep");
+        alert("Gagal menghapus resep.");
 
     }
 
@@ -219,8 +205,7 @@ async function deleteRecipe(id){
 // ===============================
 // SEARCH
 // ===============================
-
-function searchRecipe(keyword){
+function searchRecipe(keyword) {
 
     const result = recipes.filter(recipe =>
 
@@ -235,25 +220,16 @@ function searchRecipe(keyword){
 // ===============================
 // STATS
 // ===============================
-
-function updateStats(){
+function updateStats() {
 
     const cards = document.querySelectorAll(".stat-card h3");
 
-    if(cards.length >= 3){
+    if (cards.length >= 3) {
 
         cards[0].textContent = recipes.length;
-
         cards[1].textContent = recipes.length;
-
         cards[2].textContent = 0;
 
     }
 
 }
-
-// ===============================
-// START
-// ===============================
-
-loadRecipes();
