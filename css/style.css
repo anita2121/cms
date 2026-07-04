@@ -2382,3 +2382,122 @@ table{
 }
 
 }
+
+/* =========================================
+   MOBILE DASHBOARD NEW UI
+   Tambahkan PALING BAWAH style.css
+========================================= */
+
+@media screen and (max-width:768px){
+
+/* Dashboard */
+.dashboard{
+    display:block;
+}
+
+/* Sidebar jadi drawer */
+.sidebar{
+    position:fixed;
+    top:0;
+    left:-270px;
+    width:260px;
+    height:100vh;
+    display:block;
+    padding:25px;
+    overflow-y:auto;
+    transition:.3s;
+    z-index:1001;
+    background:#355C4D;
+}
+
+.sidebar.show{
+    left:0;
+}
+
+/* Overlay */
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    z-index:1000;
+}
+
+.overlay.show{
+    display:block;
+}
+
+/* Tombol menu */
+.menu-btn{
+    position:fixed;
+    top:18px;
+    left:18px;
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:#355C4D;
+    color:#fff;
+    font-size:22px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1002;
+}
+
+/* Header dashboard */
+.topbar{
+    position:sticky;
+    top:0;
+    margin:0 -20px 20px;
+    padding:18px 20px 18px 78px;
+    background:#fff;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    border-radius:0 0 20px 20px;
+}
+
+.topbar h2{
+    font-size:22px;
+}
+
+.content{
+    padding:90px 15px 20px;
+}
+
+/* Statistik */
+.stats{
+    grid-template-columns:1fr;
+    gap:15px;
+}
+
+.stat-card{
+    padding:20px;
+}
+
+.stat-card h3{
+    font-size:32px;
+}
+
+/* Table */
+.table-box{
+    padding:15px;
+    overflow-x:auto;
+}
+
+table{
+    min-width:650px;
+}
+
+/* Sidebar menu */
+.brand{
+    font-size:24px;
+    margin-bottom:30px;
+}
+
+.sidebar li{
+    margin-bottom:12px;
+    padding:15px;
+    font-size:16px;
+    border-radius:14px;
+}
+
+}
