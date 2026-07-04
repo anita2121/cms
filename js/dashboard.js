@@ -13,6 +13,12 @@ if (localStorage.getItem("login") !== "true") {
 // API
 // ===============================
 const API_URL = "https://cms-api-workerr.widyazef28.workers.dev";
+
+// ===============================
+// CURRENT USER
+// ===============================
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
 // ===============================
 // LOGOUT
 // ===============================
@@ -43,7 +49,10 @@ async function loadRecipes() {
 
     try {
 
-        const response = await fetch(`${API_URL}/recipes`);
+        const response = await fetch(
+            `${API_URL}/recipes?user_id=${currentUser.id}`
+        );
+
         const result = await response.json();
 
         if (result.success) {
@@ -63,6 +72,7 @@ async function loadRecipes() {
     } catch (err) {
 
         console.error(err);
+
         alert("Gagal mengambil data resep.");
 
     }
@@ -231,14 +241,12 @@ function updateStats() {
 
     if (cards.length < 3) return;
 
-    // Total Recipe
     cards[0].textContent = recipes.length;
 
-    // Total Category
     const categories = [...new Set(recipes.map(recipe => recipe.category))];
+
     cards[1].textContent = categories.length;
 
-    // Average Time
     let total = 0;
 
     recipes.forEach(recipe => {
@@ -263,8 +271,6 @@ function updateStats() {
 // ===============================
 // PROFILE
 // ===============================
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
 if (currentUser) {
 
     document.getElementById("welcomeText").innerHTML =
@@ -285,7 +291,6 @@ if (currentUser) {
 // ===============================
 // PROFILE DROPDOWN
 // ===============================
-
 function toggleProfileMenu() {
 
     document
@@ -305,11 +310,3 @@ window.addEventListener("click", function (e) {
     }
 
 });
-
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-console.log(currentUser);
-
-const response = await fetch(
-    `${API_URL}/recipes?user_id=${currentUser.id}`
-);
