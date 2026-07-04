@@ -224,12 +224,33 @@ function updateStats() {
 
     const cards = document.querySelectorAll(".stat-card h3");
 
-    if (cards.length >= 3) {
+    if (cards.length < 3) return;
 
-        cards[0].textContent = recipes.length;
-        cards[1].textContent = recipes.length;
-        cards[2].textContent = 0;
+    // Total Recipe
+    cards[0].textContent = recipes.length;
 
-    }
+    // Total Category
+    const categories = [...new Set(recipes.map(recipe => recipe.category))];
+    cards[1].textContent = categories.length;
+
+    // Average Time
+    let total = 0;
+
+    recipes.forEach(recipe => {
+
+        const number = parseInt(recipe.time);
+
+        if (!isNaN(number)) {
+
+            total += number;
+
+        }
+
+    });
+
+    cards[2].textContent =
+        recipes.length > 0
+            ? Math.round(total / recipes.length) + " Min"
+            : "0 Min";
 
 }
