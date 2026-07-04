@@ -281,3 +281,27 @@ if (currentUser) {
     }
 
 }
+
+// ===============================
+// PROFILE DROPDOWN
+// ===============================
+
+function toggleProfileMenu() {
+
+    document
+        .getElementById("profileDropdown")
+        .classList.toggle("show");
+
+}
+
+window.addEventListener("click", function (e) {
+
+    if (!e.target.closest(".profile-menu")) {
+
+        document
+            .getElementById("profileDropdown")
+            .classList.remove("show");
+
+    }
+
+});
